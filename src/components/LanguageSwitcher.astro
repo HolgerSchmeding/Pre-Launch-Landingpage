@@ -1,0 +1,30 @@
+---
+interface Props {
+  locale: 'en' | 'de';
+}
+
+const { locale } = Astro.props;
+
+const options = [
+  { code: 'en', label: 'EN', href: '/' },
+  { code: 'de', label: 'DE', href: '/de/' }
+] as const;
+---
+
+<nav aria-label="Language switcher" class="inline-flex items-center gap-1 rounded-full border border-white/10 bg-black/30 p-1 backdrop-blur">
+  {options.map((option) => (
+    <a
+      href={option.href}
+      hreflang={option.code}
+      aria-current={locale === option.code ? 'page' : undefined}
+      class:list={[
+        'rounded-full px-3 py-1.5 text-xs font-semibold tracking-[0.18em] transition',
+        locale === option.code
+          ? 'bg-[#ffbf00] text-[#1f1400]'
+          : 'text-slate-300 hover:bg-white/10 hover:text-white'
+      ]}
+    >
+      {option.label}
+    </a>
+  ))}
+</nav>

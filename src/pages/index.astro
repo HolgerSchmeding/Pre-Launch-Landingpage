@@ -1,0 +1,27 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Footer from '../components/Footer.astro';
+import HeroSection from '../components/HeroSection.astro';
+import ProblemSection from '../components/ProblemSection.astro';
+import AudienceSplit from '../components/AudienceSplit.astro';
+import FinalCtaSection from '../components/FinalCtaSection.astro';
+import WaitlistSection from '../components/WaitlistSection.astro';
+import { content } from '../content/site';
+
+const page = content.en;
+---
+
+<Layout
+  locale="en"
+  title={page.meta.title}
+  description={page.meta.description}
+  path="/"
+  alternatePath="/de/"
+>
+  <HeroSection locale="en" page={page} />
+  <ProblemSection page={page} />
+  <AudienceSplit page={page} />
+  <WaitlistSection locale="en" page={page} />
+  <FinalCtaSection page={page} />
+  <Footer locale="en" page={page} />
+</Layout>

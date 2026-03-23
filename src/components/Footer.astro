@@ -1,0 +1,83 @@
+---
+import { companyName, linkedInUrl } from '../content/site';
+import type { Locale, PageContent } from '../content/site';
+
+interface Props {
+  locale: Locale;
+  page: PageContent;
+}
+
+const { locale, page } = Astro.props;
+
+const legalLinks = locale === 'de'
+  ? [
+      { href: '/datenschutz/', label: 'Datenschutz' },
+      { href: '#', label: 'AGB' },
+      { href: '/impressum/', label: 'Impressum' }
+    ]
+  : [
+      { href: '/privacy/', label: 'Privacy' },
+      { href: '#', label: 'Terms' },
+      { href: '/legal-notice/', label: 'Legal notice' }
+    ];
+
+const legalHeading = locale === 'de' ? 'Rechtliches' : 'Legal';
+const socialHeading = locale === 'de' ? 'Social Media' : 'Social Media';
+const copyright = locale === 'de'
+  ? `© ${new Date().getFullYear()} ${companyName}. Alle Rechte vorbehalten.`
+  : `© ${new Date().getFullYear()} ${companyName}. All rights reserved.`;
+---
+
+<footer class="bg-black/60 px-6 pt-12 pb-8 md:px-10">
+  <div class="mx-auto max-w-7xl">
+    <!-- Top row -->
+    <div class="grid gap-10 md:grid-cols-[1fr_auto_auto] md:gap-16">
+      <!-- Left: Logo + address -->
+      <div>
+        <div class="flex items-center gap-3">
+          <img src="/brand/benchtrust-logo-dark.png" alt="BenchTrust" class="h-auto w-[220px] sm:w-[280px]" />
+        </div>
+        <div class="mt-6 space-y-1 text-sm leading-6 text-slate-400">
+          <p>Lange Straße 75</p>
+          <p>76530 Baden-Baden</p>
+          <p>Deutschland</p>
+          <a href="mailto:contact@benchtrust.com" class="text-[#c689ff] transition hover:text-[#dab6ff]">contact@benchtrust.com</a>
+        </div>
+      </div>
+
+      <!-- Middle: Legal links -->
+      <div>
+        <p class="text-xs font-semibold uppercase tracking-[0.2em] text-slate-300">{legalHeading}</p>
+        <ul class="mt-4 space-y-3">
+          {legalLinks.map((link) => (
+            <li><a href={link.href} class="text-sm text-slate-400 transition hover:text-[#ffd867]">{link.label}</a></li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Right: Social -->
+      <div>
+        <p class="text-xs font-semibold uppercase tracking-[0.2em] text-slate-300">{socialHeading}</p>
+        <div class="mt-4 flex items-center gap-4">
+          <!-- Twitter / X -->
+          <a href="https://x.com/benchtrust" target="_blank" rel="noreferrer" class="text-slate-400 transition hover:text-white" aria-label="X / Twitter">
+            <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+          <!-- LinkedIn -->
+          <a href={linkedInUrl} target="_blank" rel="noreferrer" class="text-slate-400 transition hover:text-white" aria-label="LinkedIn">
+            <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <!-- Reddit -->
+          <a href="https://reddit.com/r/benchtrust" target="_blank" rel="noreferrer" class="text-slate-400 transition hover:text-white" aria-label="Reddit">
+            <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 01-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 01.042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 014.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 01.14-.197.35.35 0 01.238-.042l2.906.617a1.214 1.214 0 011.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 00-.231.094.33.33 0 000 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 000-.462.342.342 0 00-.461 0c-.536.535-1.726.723-2.5.723-.774 0-1.965-.188-2.5-.723a.381.381 0 00-.23-.095z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Divider + copyright -->
+    <div class="mt-10 border-t border-white/10 pt-6 text-center text-xs text-slate-500">
+      {copyright}
+    </div>
+  </div>
+</footer>

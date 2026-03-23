@@ -1,0 +1,30 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { companyName } from '../content/site';
+---
+
+<Layout
+  locale="de"
+  title={`Impressum | ${companyName}`}
+  description="Platzhalter-Impressum fuer die BenchTrust Pre-Launch-Landingpage."
+  path="/impressum/"
+  alternatePath="/legal-notice/"
+>
+  <main class="mx-auto max-w-3xl px-6 py-24 text-slate-200 md:px-10">
+    <div class="panel-surface rounded-[2rem] p-8 md:p-12">
+      <p class="text-sm uppercase tracking-[0.24em] text-cyan-300/80">BenchTrust GmbH i.G.</p>
+      <h1 class="mt-4 font-display text-4xl text-white">Impressum</h1>
+      <p class="mt-6 text-base leading-8 text-slate-300">
+        Dies ist ein Pre-Launch-Platzhalter. Vor Liveschaltung muessen hier die finalen Pflichtangaben hinterlegt werden.
+      </p>
+      <div class="mt-8 space-y-3 text-sm text-slate-400">
+        <p>Firma: {companyName}</p>
+        <p>Adresse, Geschaeftsfuehrung, Registereintrag und USt-Informationen werden noch ergaenzt.</p>
+        <p>Bitte vor dem Go-live rechtlich pruefen lassen.</p>
+      </div>
+      <a class="mt-10 inline-flex rounded-full border border-white/15 px-5 py-3 text-sm font-semibold text-white transition hover:border-cyan-300/60 hover:text-cyan-200" href="/de/">
+        Zur Startseite
+      </a>
+    </div>
+  </main>
+</Layout>

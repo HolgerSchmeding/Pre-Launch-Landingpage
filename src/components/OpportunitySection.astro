@@ -1,0 +1,32 @@
+---
+import type { PageContent } from '../content/site';
+
+interface Props {
+  page: PageContent;
+}
+
+const { page } = Astro.props;
+---
+
+<section id="provider-opportunity" class="px-6 py-12 md:px-10 md:py-16">
+  <div class="brand-provider-surface mx-auto grid max-w-7xl gap-8 rounded-[2rem] p-8 md:p-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(260px,0.75fr)]">
+    <div>
+      <p class="text-xs uppercase tracking-[0.24em] text-[#ffd867]">{page.opportunity.eyebrow}</p>
+      <h2 class="mt-4 max-w-3xl font-display text-4xl leading-tight text-white">{page.opportunity.headline}</h2>
+      <p class="mt-6 max-w-3xl text-base leading-8 text-slate-200 md:text-lg">{page.opportunity.text}</p>
+    </div>
+    <div>
+      <ul class="space-y-3 text-sm leading-7 text-slate-100">
+        {page.opportunity.points.map((point) => (
+          <li class="flex gap-3 rounded-[1.25rem] border border-white/10 bg-slate-950/35 p-4">
+            <span class="mt-2 h-2.5 w-2.5 rounded-full bg-[var(--color-primary)]"></span>
+            <span>{point}</span>
+          </li>
+        ))}
+      </ul>
+      <div class="mt-6">
+        <a href="#waitlist" class="cta-primary">{page.opportunity.ctaLabel}</a>
+      </div>
+    </div>
+  </div>
+</section>

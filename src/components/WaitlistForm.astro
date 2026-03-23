@@ -1,0 +1,134 @@
+---
+import type { Locale, PageContent } from '../content/site';
+
+interface Props {
+  locale: Locale;
+  page: PageContent;
+}
+
+const { locale, page } = Astro.props;
+
+const portalId = import.meta.env.PUBLIC_HUBSPOT_PORTAL_ID ?? '';
+const formId = import.meta.env.PUBLIC_HUBSPOT_FORM_ID ?? '';
+const roleField = import.meta.env.PUBLIC_HUBSPOT_ROLE_FIELD ?? 'benchtrust_role';
+const tagField = import.meta.env.PUBLIC_HUBSPOT_TAG_FIELD ?? 'benchtrust_tag';
+const nameField = import.meta.env.PUBLIC_HUBSPOT_NAME_FIELD ?? 'firstname';
+const waitlistTag = import.meta.env.PUBLIC_HUBSPOT_WAITLIST_TAG ?? 'Waitlist';
+---
+
+<form
+  data-waitlist-form
+  data-hubspot-portal-id={portalId}
+  data-hubspot-form-id={formId}
+  data-role-field={roleField}
+  data-tag-field={tagField}
+  data-name-field={nameField}
+  data-waitlist-tag={waitlistTag}
+  data-success-message={page.waitlist.successMessage}
+  data-error-message={page.waitlist.errorMessage}
+  data-config-error-message={page.waitlist.configErrorMessage}
+  class="rounded-[2rem] border border-white/10 bg-black/60 p-6 backdrop-blur md:p-8"
+>
+  <div class="grid gap-5">
+    <label class="grid gap-2">
+      <span class="text-sm font-medium text-slate-200">{page.waitlist.fields.name}</span>
+      <input name="name" type="text" autocomplete="name" required class="form-input" placeholder={page.waitlist.placeholders.name} />
+    </label>
+
+    <label class="grid gap-2">
+      <span class="text-sm font-medium text-slate-200">{page.waitlist.fields.email}</span>
+      <input name="email" type="email" autocomplete="email" required class="form-input" placeholder={page.waitlist.placeholders.email} />
+    </label>
+
+    <label class="grid gap-2">
+      <span class="text-sm font-medium text-slate-200">{page.waitlist.fields.role}</span>
+      <select name="role" required class="form-input appearance-none">
+        <option value="">{page.waitlist.placeholders.role}</option>
+        {page.waitlist.roleOptions.map((role) => (
+          <option value={role.value}>{role.label}</option>
+        ))}
+      </select>
+    </label>
+
+    <button type="submit" class="cta-primary mt-2 border-0 disabled:cursor-not-allowed disabled:opacity-60">
+      {page.waitlist.submit}
+    </button>
+
+    <p class="text-sm leading-7 text-slate-400">{page.waitlist.privacyHint}</p>
+    <p data-form-status class="min-h-6 text-sm font-medium text-slate-300" aria-live="polite"></p>
+  </div>
+</form>
+
+<script is:inline>
+  const waitlistForms = document.querySelectorAll('[data-waitlist-form]');
+
+  for (const form of waitlistForms) {
+    if (form.dataset.bound === 'true') {
+      continue;
+    }
+
+    form.dataset.bound = 'true';
+
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+
+      const status = form.querySelector('[data-form-status]');
+      const button = form.querySelector('button[type="submit"]');
+      const formData = new FormData(form);
+      const portalId = form.dataset.hubspotPortalId;
+      const formId = form.dataset.hubspotFormId;
+      const roleField = form.dataset.roleField;
+      const tagField = form.dataset.tagField;
+      const nameField = form.dataset.nameField;
+      const waitlistTag = form.dataset.waitlistTag;
+
+      status.textContent = '';
+
+      if (!portalId || !formId || !roleField || !tagField || !nameField || !waitlistTag) {
+        status.textContent = form.dataset.configErrorMessage || 'HubSpot is not configured yet.';
+        status.dataset.state = 'error';
+        return;
+      }
+
+      button.disabled = true;
+
+      const fields = [
+        { name: nameField, value: String(formData.get('name') || '') },
+        { name: 'email', value: String(formData.get('email') || '') },
+        { name: roleField, value: String(formData.get('role') || '') },
+        { name: tagField, value: waitlistTag }
+      ];
+
+      try {
+        const response = await fetch(`https://api.hsforms.com/submissions/v3/integration/submit/${portalId}/${formId}`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            submittedAt: Date.now(),
+            fields,
+            context: {
+              pageUri: window.location.href,
+              pageName: document.title
+            }
+          })
+        });
+
+        if (!response.ok) {
+          throw new Error(`HubSpot submission failed with status ${response.status}`);
+        }
+
+        form.reset();
+        status.textContent = form.dataset.successMessage || 'Thanks. You are on the waitlist.';
+        status.dataset.state = 'success';
+      } catch (error) {
+        console.error(error);
+        status.textContent = form.dataset.errorMessage || 'Submission failed. Please try again.';
+        status.dataset.state = 'error';
+      } finally {
+        button.disabled = false;
+      }
+    });
+  }
+</script>

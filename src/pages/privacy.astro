@@ -1,0 +1,30 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { companyName } from '../content/site';
+---
+
+<Layout
+  locale="en"
+  title={`Privacy | ${companyName}`}
+  description="Privacy placeholder page for the BenchTrust pre-launch landing page."
+  path="/privacy/"
+  alternatePath="/datenschutz/"
+>
+  <main class="mx-auto max-w-3xl px-6 py-24 text-slate-200 md:px-10">
+    <div class="panel-surface rounded-[2rem] p-8 md:p-12">
+      <p class="text-sm uppercase tracking-[0.24em] text-cyan-300/80">Pre-launch placeholder</p>
+      <h1 class="mt-4 font-display text-4xl text-white">Privacy</h1>
+      <p class="mt-6 text-base leading-8 text-slate-300">
+        Add your final privacy notice, including HubSpot processing details, lawful basis, retention rules and contact information, before launch.
+      </p>
+      <div class="mt-8 space-y-3 text-sm text-slate-400">
+        <p>Controller: {companyName}</p>
+        <p>Form data is intended for the BenchTrust waitlist workflow and a launch communication sequence.</p>
+        <p>Review the HubSpot DPA and cookie-related requirements if embed scripts are used.</p>
+      </div>
+      <a class="mt-10 inline-flex rounded-full border border-white/15 px-5 py-3 text-sm font-semibold text-white transition hover:border-cyan-300/60 hover:text-cyan-200" href="/">
+        Back to homepage
+      </a>
+    </div>
+  </main>
+</Layout>

@@ -1,0 +1,36 @@
+---
+import { linkedInUrl } from '../content/site';
+import type { PageContent } from '../content/site';
+
+interface Props {
+  page: PageContent;
+}
+
+const { page } = Astro.props;
+---
+
+<section id="launch-community" class="px-6 py-12 md:px-10 md:py-16">
+  <div class="mx-auto grid max-w-7xl gap-8 rounded-[2rem] border border-[#ffbf00]/20 bg-[linear-gradient(180deg,rgba(53,18,96,0.92)_0%,rgba(24,7,43,0.88)_100%)] p-8 shadow-[0_24px_70px_rgba(255,191,0,0.08)] md:p-10 lg:grid-cols-[minmax(0,0.95fr)_minmax(300px,0.72fr)]">
+    <div>
+      <p class="text-xs uppercase tracking-[0.24em] text-[#ffd867]">{page.launchCommunity.eyebrow}</p>
+      <h2 class="mt-4 max-w-3xl font-display text-4xl leading-tight text-white md:text-5xl">{page.launchCommunity.headline}</h2>
+      <p class="mt-6 max-w-3xl text-base leading-8 text-slate-200 md:text-lg">{page.launchCommunity.text}</p>
+      <p class="mt-5 max-w-3xl text-base leading-8 text-slate-300 md:text-lg">{page.launchCommunity.body}</p>
+    </div>
+
+    <div class="rounded-[1.75rem] border border-white/10 bg-black/20 p-6 backdrop-blur">
+      <p class="text-sm font-semibold uppercase tracking-[0.18em] text-[#ffd867]">LinkedIn Launch Feed</p>
+      <ul class="mt-5 space-y-3 text-sm leading-7 text-slate-100">
+        {page.launchCommunity.bullets.map((bullet) => (
+          <li class="flex gap-3 rounded-[1.2rem] border border-white/8 bg-white/5 p-4">
+            <span class="mt-2 h-2.5 w-2.5 shrink-0 rounded-full bg-[var(--color-primary)]"></span>
+            <span>{bullet}</span>
+          </li>
+        ))}
+      </ul>
+      <div class="mt-6">
+        <a href={linkedInUrl} target="_blank" rel="noreferrer" class="cta-primary w-full text-center">{page.launchCommunity.ctaLabel}</a>
+      </div>
+    </div>
+  </div>
+</section>
