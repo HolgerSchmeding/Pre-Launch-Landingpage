@@ -30,31 +30,42 @@ const waitlistTag = import.meta.env.PUBLIC_HUBSPOT_WAITLIST_TAG ?? 'Waitlist';
   class="rounded-[2rem] border border-white/10 bg-black/60 p-6 backdrop-blur md:p-8"
 >
   <div class="grid gap-5">
-    <label class="grid gap-2">
-      <span class="text-sm font-medium text-slate-200">{page.waitlist.fields.name}</span>
-      <input name="name" type="text" autocomplete="name" required class="form-input" placeholder={page.waitlist.placeholders.name} />
-    </label>
+    <h3 class="font-display text-xl font-bold text-[var(--color-primary)]">{page.waitlist.formHeadline}</h3>
+
+    <div class="grid gap-5 md:grid-cols-3">
+      <label class="grid gap-2">
+        <span class="text-sm font-medium text-slate-200">{page.waitlist.fields.name}</span>
+        <input name="name" type="text" autocomplete="name" required class="form-input" placeholder={page.waitlist.placeholders.name} />
+      </label>
+
+      <label class="grid gap-2">
+        <span class="text-sm font-medium text-slate-200">{page.waitlist.fields.email}</span>
+        <input name="email" type="email" autocomplete="email" required class="form-input" placeholder={page.waitlist.placeholders.email} />
+      </label>
+
+      <label class="grid gap-2">
+        <span class="text-sm font-medium text-slate-200">{page.waitlist.fields.role}</span>
+        <select name="role" required class="form-input appearance-none">
+          <option value="">{page.waitlist.placeholders.role}</option>
+          {page.waitlist.roleOptions.map((role) => (
+            <option value={role.value}>{role.label}</option>
+          ))}
+        </select>
+      </label>
+    </div>
 
     <label class="grid gap-2">
-      <span class="text-sm font-medium text-slate-200">{page.waitlist.fields.email}</span>
-      <input name="email" type="email" autocomplete="email" required class="form-input" placeholder={page.waitlist.placeholders.email} />
+      <span class="text-sm font-medium text-slate-200">{page.waitlist.fields.feedback}</span>
+      <textarea name="feedback" rows="3" class="form-input resize-none" placeholder={page.waitlist.placeholders.feedback}></textarea>
     </label>
 
-    <label class="grid gap-2">
-      <span class="text-sm font-medium text-slate-200">{page.waitlist.fields.role}</span>
-      <select name="role" required class="form-input appearance-none">
-        <option value="">{page.waitlist.placeholders.role}</option>
-        {page.waitlist.roleOptions.map((role) => (
-          <option value={role.value}>{role.label}</option>
-        ))}
-      </select>
-    </label>
+    <div class="mt-2 flex justify-center">
+      <button type="submit" class="cta-primary border-0 disabled:cursor-not-allowed disabled:opacity-60">
+        {page.waitlist.submit}
+      </button>
+    </div>
 
-    <button type="submit" class="cta-primary mt-2 border-0 disabled:cursor-not-allowed disabled:opacity-60">
-      {page.waitlist.submit}
-    </button>
-
-    <p class="text-sm leading-7 text-slate-400">{page.waitlist.privacyHint}</p>
+    <p class="text-sm leading-7 text-slate-400" set:html={page.waitlist.privacyHint}></p>
     <p data-form-status class="min-h-6 text-sm font-medium text-slate-300" aria-live="polite"></p>
   </div>
 </form>

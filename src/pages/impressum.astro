@@ -14,14 +14,29 @@ import { companyName } from '../content/site';
     <div class="panel-surface rounded-[2rem] p-8 md:p-12">
       <p class="text-sm uppercase tracking-[0.24em] text-cyan-300/80">BenchTrust GmbH i.G.</p>
       <h1 class="mt-4 font-display text-4xl text-white">Impressum</h1>
-      <p class="mt-6 text-base leading-8 text-slate-300">
-        Dies ist ein Pre-Launch-Platzhalter. Vor Liveschaltung muessen hier die finalen Pflichtangaben hinterlegt werden.
-      </p>
-      <div class="mt-8 space-y-3 text-sm text-slate-400">
-        <p>Firma: {companyName}</p>
-        <p>Adresse, Geschaeftsfuehrung, Registereintrag und USt-Informationen werden noch ergaenzt.</p>
-        <p>Bitte vor dem Go-live rechtlich pruefen lassen.</p>
+
+      <div class="mt-8 space-y-6 text-base leading-8 text-slate-300">
+        <div>
+          <h2 class="text-lg font-semibold text-white">Angaben gemäß § 5 TMG</h2>
+          <p class="mt-2">BenchTrust GmbH i.G.<br />Lange Strasse 75<br />76530 Baden-Baden</p>
+        </div>
+
+        <div>
+          <h2 class="text-lg font-semibold text-white">Vertreten durch</h2>
+          <p class="mt-2">Die Geschäftsführer: Bernd Burkhardt, Holger Schmeding</p>
+        </div>
+
+        <div>
+          <h2 class="text-lg font-semibold text-white">Kontakt</h2>
+          <p class="mt-2">E-Mail: contact@benchtrust.com</p>
+        </div>
+
+        <div>
+          <h2 class="text-lg font-semibold text-white">Registereintrag</h2>
+          <p class="mt-2">Eintragung im Handelsregister.<br />Die Gesellschaft befindet sich in Gründung. Die Handelsregisternummer wird nach erfolgter Eintragung ergänzt.</p>
+        </div>
       </div>
+
       <a class="mt-10 inline-flex rounded-full border border-white/15 px-5 py-3 text-sm font-semibold text-white transition hover:border-cyan-300/60 hover:text-cyan-200" href="/de/">
         Zur Startseite
       </a>

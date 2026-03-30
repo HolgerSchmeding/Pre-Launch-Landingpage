@@ -11,11 +11,11 @@ const { page } = Astro.props;
 
 <section class="px-6 py-12 md:px-10 md:py-16">
   <div class="mx-auto max-w-7xl rounded-[2rem] border border-white/8 bg-white/4 p-8 text-center backdrop-blur md:p-10">
-    <p class="brand-kicker text-xs uppercase tracking-[0.24em]">Final CTA</p>
-    <h2 class="mt-4 font-display text-4xl text-white">{page.finalCta.headline}</h2>
+    <p class="brand-kicker text-xs uppercase tracking-[0.24em]">Verfolgen Sie unseren Weg zum Go-Live.</p>
+    <h2 class="mt-4 font-display text-4xl font-bold text-[var(--color-primary)]">{page.finalCta.headline}</h2>
     <p class="mx-auto mt-6 max-w-3xl text-base leading-8 text-slate-300 md:text-lg">{page.finalCta.text}</p>
     <div class="mt-8 flex justify-center">
-      <a href={linkedInUrl} target="_blank" rel="noreferrer" class="cta-secondary !border-[#ffbf00]/40 !bg-[#ffbf00]/10 !px-7 !py-4 !text-[#ffd867] hover:!bg-[#ffbf00]/18 hover:!text-[#ffe7a8]">{page.finalCta.linkedinLabel}</a>
+      <a href={linkedInUrl} target="_blank" rel="noreferrer" class="cta-secondary">{page.finalCta.linkedinLabel}</a>
     </div>
   </div>
 </section>

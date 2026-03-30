@@ -1,0 +1,48 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { companyName } from '../content/site';
+---
+
+<Layout
+  locale="de"
+  title={`AGB | ${companyName}`}
+  description="Nutzungsbedingungen für die BenchTrust Pre-Launch Warteliste."
+  path="/agb/"
+  alternatePath="/terms/"
+>
+  <main class="mx-auto max-w-3xl px-6 py-24 text-slate-200 md:px-10">
+    <div class="panel-surface rounded-[2rem] p-8 md:p-12">
+      <p class="text-sm uppercase tracking-[0.24em] text-cyan-300/80">BenchTrust GmbH i.G.</p>
+      <h1 class="mt-4 font-display text-4xl text-white">Nutzungsbedingungen</h1>
+      <p class="mt-2 text-sm text-slate-400">Pre-Launch Warteliste</p>
+
+      <div class="mt-8 space-y-8 text-base leading-8 text-slate-300">
+
+        <div>
+          <h2 class="text-lg font-semibold text-white">1. Gegenstand</h2>
+          <p class="mt-2">Die BenchTrust GmbH i.G. bietet Interessenten (B2B-Einkäufern und Anbietern) die Möglichkeit, sich unverbindlich für einen Vorab-Zugang (Early Access) zur geplanten Sourcing-Plattform anzumelden.</p>
+        </div>
+
+        <div>
+          <h2 class="text-lg font-semibold text-white">2. Anmeldung und Zielgruppe</h2>
+          <p class="mt-2">Unser Angebot richtet sich ausschließlich an Unternehmer, juristische Personen des öffentlichen Rechts oder öffentlich-rechtliche Sondervermögen im Sinne von § 14 BGB (B2B). Eine Registrierung durch Verbraucher ist ausgeschlossen. Mit dem Absenden des Formulars bestätigen Sie, im geschäftlichen Interesse zu handeln.</p>
+        </div>
+
+        <div>
+          <h2 class="text-lg font-semibold text-white">3. Unverbindlichkeit</h2>
+          <p class="mt-2">Die Eintragung in die Warteliste ist kostenlos und begründet keine rechtliche Verpflichtung zum späteren Kauf oder zur Nutzung kostenpflichtiger Premium-Pakete. Ebenso besteht kein rechtlicher Anspruch auf eine Aufnahme in die geschlossene Beta-Phase oder einen bestimmten Launch-Termin.</p>
+        </div>
+
+        <div>
+          <h2 class="text-lg font-semibold text-white">4. Kommunikation</h2>
+          <p class="mt-2">Durch die Anmeldung erklären Sie sich einverstanden, dass wir Sie per E-Mail über den Entwicklungsstand, Launch-Termine und plattformspezifische Neuigkeiten informieren. Sie können sich jederzeit von diesen Benachrichtigungen abmelden.</p>
+        </div>
+
+      </div>
+
+      <a class="mt-10 inline-flex rounded-full border border-white/15 px-5 py-3 text-sm font-semibold text-white transition hover:border-cyan-300/60 hover:text-cyan-200" href="/de/">
+        Zur Startseite
+      </a>
+    </div>
+  </main>
+</Layout>

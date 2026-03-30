@@ -1,6 +1,7 @@
 ---
 import LanguageSwitcher from './LanguageSwitcher.astro';
 import type { Locale, PageContent } from '../content/site';
+import { linkedInUrl } from '../content/site';
 
 interface Props {
   locale: Locale;
@@ -60,6 +61,13 @@ const headerCtaLabel = locale === 'de' ? 'Zur Warteliste' : 'Join waitlist';
         <p class="mt-3 text-lg leading-8 text-slate-200 md:text-xl lg:text-[1.35rem]">
           {page.hero.subheadline}
         </p>
+      </div>
+      <div class="mt-8 flex flex-wrap gap-4">
+        <a
+          href={page.hero.secondaryCtaHref}
+          class="cta-secondary"
+          {...(page.hero.secondaryCtaExternal ? { target: '_blank', rel: 'noreferrer' } : {})}
+        >{page.hero.secondaryCta}</a>
       </div>
     </div>
   </div>

@@ -48,32 +48,37 @@ export const content = {
       ]
     },
     problem: {
-      eyebrow: 'Conversational Commerce',
-      headline: 'Welcome to the new era of decision-making.',
+      eyebrow: 'The Market Shift',
+      headline: 'The Market Shift: B2B decisions are made differently today.',
       text:
-        'B2B buying decisions are no longer made on static vendor websites. They happen much earlier, inside intelligent research environments, long before the first sales conversation begins. If providers are not present there with verified data and measurable trust, they lose the deal before they even know it exists. BenchTrust changes that. We make complex market research transparent for buyers in seconds and give providers their influence on the buying decision back.',
+        'Traditional market research is dead. Buying decisions are made long before the first sales rep picks up the phone – inside intelligent, AI-powered research environments. If you are not verified and visible there, you lose the deal unnoticed. BenchTrust changes the rules: We make complex sourcing transparent for buyers in seconds and give providers their influence on the buying decision back.',
+      factsEyebrow: 'The new reality in B2B sourcing:',
       points: [
-        'Decisions now happen before direct vendor conversations start.',
-        'Buyers need fast orientation, trust and comparison without friction.',
-        'Providers lose influence when they are missing from AI-assisted research.',
-        'BenchTrust makes research transparent for buyers and restores visibility for providers.'
+        { title: 'Preference before outreach', text: 'The shortlist is usually set before the provider is even contacted.' },
+        { title: 'AI replaces Google', text: 'Buyers no longer search endlessly – they let AI compare, filter and evaluate.' },
+        { title: 'Visibility is revenue', text: 'Those invisible in the early research phase get cut from the pitch.' }
       ],
       signals: [
         {
-          title: 'For buyers',
-          text: 'Complex markets become understandable faster, with verified information and less manual research overhead.'
+          title: 'For Buyers',
+          headline: 'Radically faster decisions.',
+          text: 'No more research chaos and endless spreadsheets. Compare B2B solutions data-driven, verified and precise – saving weeks of manual work.'
         },
         {
-          title: 'For providers',
-          text: 'The right vendors stay visible early enough to shape the outcome instead of only reacting to it.'
+          title: 'For Providers',
+          headline: 'Win deals before the RFP.',
+          text: 'Stop chasing the market. Be present exactly where buyers form their preferences today, and turn hidden AI searches into real, qualified leads.'
         }
       ]
     },
     audience: {
       eyebrow: 'Two Perspectives. One Platform.',
       headline: 'Find the right solution or get found as the right solution.',
-      intro:
-        'BenchTrust brings buyers and providers together in one AI-powered environment. No disconnected tools. No broken handoffs.',
+      intro: [
+        'No disconnected tools.',
+        'No broken handoffs.',
+        'Just efficient sourcing.'
+      ],
       cards: [
         {
           id: 'buyer-path',
@@ -143,41 +148,45 @@ export const content = {
       ctaLabel: 'Activate your profile'
     },
     waitlist: {
-      eyebrow: 'Waitlist',
-      headline: 'Be there from day one.',
+      eyebrow: 'Co-Creator Panel',
+      headline: 'Become a BenchTrust Co-Creator.',
       text:
-        'In June 2026, we open the doors to a new era of B2B procurement. Whether you want smarter, data-driven comparisons as a buyer or a stronger qualified pipeline as a provider, secure your place in the front row now.',
-      audienceTags: ['Buyer looking for the right solution', 'Provider focused on visibility'],
+        'We are not building BenchTrust behind closed doors – we are building it with you. Your input shapes what the platform looks like in June. Trade your expertise for exclusive early access.',
+      audienceTags: ['15-minute Founder Chat', 'Feature voting via LinkedIn', 'Exclusive Sneak Peeks'],
       benefits: [
         {
-          title: 'Exclusive early access',
-          text: 'Be among the first to receive an official invitation when BenchTrust launches in June.'
+          title: 'Your feedback matters',
+          text: 'Compelling pain points lead to a personal conversation with our founding team.'
         },
         {
-          title: 'Tailored onboarding',
-          text: 'By choosing your role, we can prepare your profile and onboarding path in the background already.'
+          title: 'Exclusive sneak peeks',
+          text: 'Every 3 weeks, co-creators get development screenshots – before they hit LinkedIn.'
         }
       ],
       supportingText:
-        'Leave your details so BenchTrust can route you into the right launch segment from the very beginning.',
+        'Your answers flow directly into our product development. Become part of the team that shapes BenchTrust.',
+      formHeadline: 'Become a BenchTrust Co-Creator.',
       fields: {
         name: 'Name',
         email: 'Business email',
-        role: 'I am'
+        role: 'I am',
+        feedback: 'What is your biggest frustration when buying or selling B2B software and services today?'
       },
       placeholders: {
         name: 'Alex Morgan',
         email: 'alex@company.com',
-        role: 'Select your role'
+        role: 'Select your role',
+        feedback: 'Your answer feeds directly into our development (optional)'
       },
       roleOptions: [
-        { value: 'buyer', label: 'Buyer looking for the right solution' },
-        { value: 'provider', label: 'Provider focused on visibility' }
+        { value: 'buyer', label: 'Buyer' },
+        { value: 'software-provider', label: 'Software Provider' },
+        { value: 'service-provider', label: 'Service Provider' }
       ],
-      submit: 'Join the waitlist now',
+      submit: 'Share insights & get early access',
       privacyHint:
-        'By submitting the form, you agree that BenchTrust may store and process your contact data for updates around the launch.',
-      successMessage: 'Thanks. You are on the BenchTrust waitlist.',
+        'By signing up, you secure exclusive access to the beta version in June. We will only contact you for important launch updates and targeted feature surveys.',
+      successMessage: 'Welcome to the Co-Creator Panel! We will be in touch.',
       errorMessage: 'Submission failed. Please try again in a moment.',
       configErrorMessage:
         'HubSpot is not configured yet. Add portal ID and form ID in the environment file to activate submissions.'
@@ -202,13 +211,13 @@ export const content = {
     },
     hero: {
       pretitle: 'Launching June 2026',
-      headline: 'Der B2B-Einkauf war lange genug eine Blackbox.',
+      headline: 'B2B-Einkauf ohne Blindflug.',
       claim: 'Smarter Procurement. Powered by AI. Driven by Trust.',
       subheadline:
-        'BenchTrust ist die erste KI-orchestrierte Sourcing-Plattform, die Einkäufer und Anbieter genau dort zusammenbringt, wo heute Entscheidungen fallen.',
-      primaryCta: 'Auf die Warteliste setzen',
+        'BenchTrust ist die erste KI-orchestrierte Sourcing-Plattform, die B2B-Einkäufer und Anbieter exakt dort zusammenbringt, wo heute Entscheidungen fallen.',
+      primaryCta: '👉 Early Access sichern',
       primaryCtaHref: '#waitlist',
-      secondaryCta: 'Begleiten Sie uns zum Launch auf LinkedIn',
+      secondaryCta: '🔗 Begleiten Sie uns auf LinkedIn',
       secondaryCtaHref: linkedInUrl,
       secondaryCtaExternal: true,
       highlights: ['Decision Infrastructure für modernen Einkauf', 'Vertrauenswürdiger Vergleich vor der RFP', 'Frühere Sichtbarkeit für die richtigen Anbieter'],
@@ -237,74 +246,79 @@ export const content = {
       ]
     },
     problem: {
-      eyebrow: 'Conversational Commerce',
-      headline: 'Willkommen in der neuen Ära der Entscheidungsfindung.',
+      eyebrow: 'Der Markt-Shift',
+      headline: 'Der Markt-Shift: B2B-Entscheidungen fallen heute anders.',
       text:
-        'B2B-Kaufentscheidungen fallen heute nicht mehr auf statischen Anbieter-Websites. Sie fallen längst vorher, in intelligenten Recherche-Umgebungen, lange bevor der erste Vertriebskontakt zustande kommt. Wer hier nicht mit verifizierten Daten und messbarem Vertrauen präsent ist, verliert den Deal, bevor er überhaupt davon erfährt. BenchTrust ändert das. Wir machen die komplexe Marktrecherche für Einkäufer in Sekunden transparent und geben Anbietern den Einfluss auf die Kaufentscheidung zurück.',
+        'Die klassische Marktrecherche ist tot. Kaufentscheidungen fallen längst, bevor der erste Vertriebsmitarbeiter ans Telefon geht – in intelligenten, KI-gestützten Rechercheumgebungen. Wer hier nicht verifiziert und sichtbar ist, verliert den Deal unbemerkt. BenchTrust ändert die Spielregeln: Wir machen die komplexe Suche für Einkäufer in Sekunden transparent und geben Anbietern ihren Einfluss auf die Kaufentscheidung zurück.',
+      factsEyebrow: 'Die neue Realität im B2B-Sourcing:',
       points: [
-        'Entscheidungen entstehen heute vor dem ersten Vertriebsgespräch.',
-        'Einkäufer brauchen schnelle Orientierung, Vertrauen und Vergleich ohne Reibung.',
-        'Anbieter verlieren Einfluss, wenn sie in AI-gestützter Recherche fehlen.',
-        'BenchTrust macht Recherche für Einkäufer transparent und Sichtbarkeit für Anbieter früher möglich.'
+        { title: 'Präferenz vor Vertrieb', text: 'Die Shortlist steht meist schon, bevor der Anbieter überhaupt kontaktiert wird.' },
+        { title: 'KI ersetzt Google', text: 'Einkäufer suchen nicht mehr endlos selbst – sie lassen vergleichen, filtern und bewerten.' },
+        { title: 'Sichtbarkeit ist Umsatz', text: 'Wer in der frühen Recherchephase unsichtbar bleibt, fliegt aus dem Pitch.' }
       ],
       signals: [
         {
           title: 'Für Einkäufer',
-          text: 'Komplexe Märkte werden schneller verständlich, mit verifizierten Informationen und weniger manuellem Rechercheaufwand.'
+          headline: 'Radikal schnellere Entscheidungen.',
+          text: 'Schluss mit dem Recherche-Chaos und endlosen Excel-Listen. Vergleichen Sie B2B-Lösungen datenbasiert, verifiziert und präzise auf den Punkt – und sparen Sie Wochen an manueller Arbeit.'
         },
         {
           title: 'Für Anbieter',
-          text: 'Die richtigen Anbieter bleiben früh genug sichtbar, um den Ausgang mitzugestalten, statt ihm nur hinterherzulaufen.'
+          headline: 'Deals gewinnen, bevor sie ausschreiben.',
+          text: 'Laufen Sie dem Markt nicht mehr hinterher. Werden Sie genau dort präsent, wo Einkäufer heute ihre Präferenzen bilden, und wandeln Sie verdeckte KI-Suchen in echte, qualifizierte Leads um.'
         }
       ]
     },
     audience: {
-      eyebrow: 'Zwei Perspektiven. Eine gemeinsame Plattform.',
-      headline: 'Die richtige Lösung finden oder als Lösung gefunden werden.',
-      intro:
-        'BenchTrust vereint die Bedürfnisse von Einkäufern und Anbietern in einer einzigen, KI-gestützten Umgebung. Keine getrennten Tools, keine Medienbrüche.',
+      eyebrow: 'Zwei Perspektiven. Eine Plattform.',
+      headline: 'Eine Plattform. Zwei klare Perspektiven.',
+      intro: [
+        'Keine Medienbrüche.',
+        'Keine fragmentierten Tools.',
+        'Nur effizientes Sourcing.'
+      ],
       cards: [
         {
           id: 'buyer-path',
           variant: 'buyer',
-          label: 'Für Einkäufer: Ihr Sourcing Copilot',
-          title: 'Schneller vergleichen. Souveräner entscheiden.',
+          label: 'Für Einkäufer',
+          title: 'Ihr Sourcing Copilot',
           text:
-            'Die wochenlange, manuelle Marktrecherche hat ein Ende. Unser KI-Agent analysiert Ihren Bedarf, führt objektives Benchmarking durch und liefert Ihnen passgenaue Anbieter-Vergleiche.',
+            'Vergleichen Sie Software und Services in Minuten statt Wochen. Datengetrieben, objektiv und für den Einkauf 100 % kostenfrei.',
           points: [
-            '100 % kostenfrei für Einkäufer',
-            'Datengetriebene Reifegradanalysen und ROI-Rechner',
-            'Passgenaue RFPs mit wenigen Klicks versenden'
+            'Schneller zur Shortlist: Automatisierte Reifegradanalysen und objektives Benchmarking.',
+            'Souverän entscheiden: Fundierte ROI-Rechner und verifizierte Peer-Insights.',
+            'Effizient ausschreiben: Passgenaue RFPs mit wenigen Klicks versenden.'
           ],
-          ctaLabel: 'Vergleich starten',
+          ctaLabel: '▶ Provider Search Preview',
           ctaHref: '#waitlist'
         },
         {
           id: 'provider-path',
           variant: 'provider',
-          label: 'Für Anbieter: Ihre Lead Engine',
-          title: 'Holen Sie sich den Einfluss zurück.',
+          label: 'Für Anbieter',
+          title: 'Ihre Lead Engine',
           text:
-            'Verlieren Sie keine Deals mehr, weil Sie in KI-gestützten Recherchen als toter Briefkasten enden. Werden Sie genau in dem Moment sichtbar, in dem die Shortlist des Einkäufers entsteht: verifiziert, vertrauenswürdig und direkt buchbar.',
+            'Seien Sie Teil der Entscheidung, nicht nur der Shortlist. Verwandeln Sie blinden Traffic in qualifizierte B2B-Leads.',
           points: [
-            'Profil-Hoheit claimen und Brand Accountability zeigen',
-            'Reibungsverluste minimieren und qualifizierte Leads sowie RFPs direkt erhalten',
-            'Verdeckte Nachfrage in messbaren Umsatz verwandeln'
+            'Einfluss zurückgewinnen: Verifiziertes Profil claimen und sofort sichtbar werden.',
+            'Qualifizierte Nachfrage: Direkte RFP-Anfragen erhalten – ganz ohne Reibungsverluste.',
+            'Deals sichern: Verdeckte Nachfrage in messbaren Umsatz verwandeln.'
           ],
-          ctaLabel: 'Profil claimen',
+          ctaLabel: '▶ Provider Offering Preview',
           ctaHref: '#waitlist'
         }
       ]
     },
     launchCommunity: {
-      eyebrow: 'Launching June 2026',
-      headline: 'Der Countdown läuft. Begleiten Sie uns zum Launch.',
+      eyebrow: 'Co-Creator Panel',
+      headline: 'Der Countdown läuft. Bauen Sie mit uns die Zukunft.',
       text:
-        'Hinter den Kulissen glühen die Server: Im Juni 2026 geht die BenchTrust-Plattform offiziell live. Wir bauen diese Lösung nicht im stillen Kämmerlein, sondern gemeinsam mit der Community.',
+        'Im Juni 2026 geht BenchTrust live – und Ihr Input bestimmt, wie die Plattform aussehen wird. Wir bauen diese Lösung nicht im stillen Kämmerlein, sondern gemeinsam mit Einkäufern und Anbietern, die den B2B-Markt kennen.',
       body:
-        'Verfolgen Sie unseren Weg bis zum Go-Live transparent auf LinkedIn. Erhalten Sie wöchentlich exklusive Einblicke in die Software, diskutieren Sie mit uns über die Zukunft des B2B-Einkaufs und verpassen Sie nicht den Startschuss.',
-      bullets: ['Wöchentliche Sneak Peeks in die Software', 'Transparente Build-in-Public-Updates bis zum Launch', 'Direkter Austausch zur Zukunft des B2B-Einkaufs'],
-      ctaLabel: 'Werden Sie jetzt Follower auf LinkedIn'
+        'Als Co-Creator erhalten Sie exklusive Sneak Peeks, nehmen an Feature-Votings teil und können in persönlichen Founder Chats direkten Einfluss auf die Produktentwicklung nehmen.',
+      bullets: ['15-Minuten Founder Chats zu Ihren Pain Points', 'Feature-Voting via LinkedIn', 'Exklusive Sneak Peeks alle 3 Wochen'],
+      ctaLabel: '👉 Jetzt Follower auf LinkedIn werden'
     },
     trust: {
       eyebrow: 'Warum BenchTrust',
@@ -332,41 +346,44 @@ export const content = {
       ctaLabel: 'Profil aktivieren'
     },
     waitlist: {
-      eyebrow: 'Warteliste',
-      headline: 'Seien Sie ab Tag 1 dabei.',
+      eyebrow: 'Co-Creator Panel',
+      headline: 'Werden Sie BenchTrust Co-Creator.',
       text:
-        'Im Juni 2026 öffnen wir die Türen für die neue Ära des B2B-Einkaufs. Ob Sie als Einkäufer endlich smarte, datengetriebene Vergleiche nutzen wollen oder als Anbieter Ihre qualifizierte Lead-Pipeline füllen möchten: Sichern Sie sich jetzt Ihren Platz in der ersten Reihe.',
-      audienceTags: ['Einkäufer auf Lösungssuche', 'Anbieter mit Fokus auf Sichtbarkeit'],
+        'Wir bauen BenchTrust nicht im stillen Kämmerlein – sondern mit Ihnen. Ihr Input bestimmt, wie die Plattform im Juni aussehen wird. Tauschen Sie Expertenwissen gegen exklusiven Vorab-Zugang.',
+      audienceTags: ['15-Minuten Founder Chat', 'Feature-Voting via LinkedIn', 'Exklusive Sneak Peeks'],
       benefits: [
         {
-          title: 'Exklusiver Vorab-Zugang',
-          text: 'Sie gehören zu den Ersten, die im Juni zum offiziellen Launch eingeladen werden.'
+          title: 'Ihr Feedback zählt',
+          text: 'Spannende Pain Points führen zu einem persönlichen Gespräch mit unserem Gründer-Team.'
         },
         {
-          title: 'Passgenaues Onboarding',
-          text: 'Durch die Wahl Ihrer Rolle bereiten wir Profil und Einstieg bereits im Hintergrund für Sie vor.'
+          title: 'Exklusive Sneak Peeks',
+          text: 'Alle 3 Wochen erhalten Co-Creator Screenshots aus der Entwicklung – noch bevor sie auf LinkedIn erscheinen.'
         }
       ],
       supportingText:
-        'Hinterlassen Sie Ihre Daten, damit BenchTrust Sie von Anfang an dem richtigen Launch-Segment zuordnen kann.',
+        'Ihre Antworten fließen direkt in unsere Produktentwicklung ein. Werden Sie Teil des Teams, das BenchTrust formt.',
+      formHeadline: 'Werden Sie BenchTrust Co-Creator.',
       fields: {
         name: 'Name',
         email: 'Geschäfts-E-Mail',
-        role: 'Ich bin'
+        role: 'Ich bin',
+        feedback: 'Was ist aktuell Ihre größte Frustration beim Einkauf oder Vertrieb von Software und Services?'
       },
       placeholders: {
         name: 'Max Mustermann',
         email: 'max@unternehmen.de',
-        role: 'Rolle auswählen'
+        role: 'Rolle auswählen',
+        feedback: 'Teilen Sie uns Ihren größten Pain Point mit. Ihr Input fließt direkt in die Entwicklung ein...'
       },
       roleOptions: [
-        { value: 'buyer', label: 'Einkäufer auf Lösungssuche' },
-        { value: 'provider', label: 'Anbieter mit Fokus auf Sichtbarkeit' }
+        { value: 'buyer', label: 'Einkäufer' },
+        { value: 'provider', label: 'Anbieter' }
       ],
-      submit: 'Jetzt auf die Warteliste setzen',
+      submit: 'Als Co-Creator eintragen',
       privacyHint:
-        'Mit dem Absenden stimmen Sie zu, dass BenchTrust Ihre Kontaktdaten für Updates rund um den Launch speichert und verarbeitet.',
-      successMessage: 'Vielen Dank. Sie stehen jetzt auf der BenchTrust-Warteliste.',
+        'Mit Ihrer Anmeldung sichern Sie sich exklusiven Zugang zur Beta-Version im Juni. Wir kontaktieren Sie für wichtige Launch-Updates und gezielte Umfragen zu neuen Features. <a href="/datenschutz/" class="underline hover:text-white">Datenschutz</a> | <a href="/agb/" class="underline hover:text-white">AGB</a>',
+      successMessage: 'Willkommen im Co-Creator Panel! Wir melden uns bei Ihnen.',
       errorMessage: 'Die Übermittlung ist fehlgeschlagen. Bitte versuchen Sie es erneut.',
       configErrorMessage:
         'HubSpot ist noch nicht konfiguriert. Hinterlegen Sie Portal-ID und Formular-ID in der Umgebungsdatei.'
