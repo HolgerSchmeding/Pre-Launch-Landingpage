@@ -1,14 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { companyName, content } from '../content/site';
-
-const page = content.en;
+import { companyName } from '../content/site';
 ---
 
 <Layout
   locale="en"
   title={`Legal Notice | ${companyName}`}
-  description="Legal placeholder page for the BenchTrust pre-launch landing page."
+  description="Legal notice for the BenchTrust pre-launch landing page."
   path="/legal-notice/"
   alternatePath="/impressum/"
 >
@@ -16,17 +14,34 @@ const page = content.en;
     <div class="panel-surface rounded-[2rem] p-8 md:p-12">
       <p class="text-sm uppercase tracking-[0.24em] text-cyan-300/80">BenchTrust GmbH i.G.</p>
       <h1 class="mt-4 font-display text-4xl text-white">Legal Notice</h1>
-      <p class="mt-6 text-base leading-8 text-slate-300">
-        This is a pre-launch placeholder. Replace this page with the final legal notice before the landing page goes live.
-      </p>
-      <div class="mt-8 space-y-3 text-sm text-slate-400">
-        <p>Company: {companyName}</p>
-        <p>Address, managing directors, commercial register and VAT details are still pending.</p>
-        <p>Please align the final content with German and EU legal requirements before publishing.</p>
+
+      <div class="mt-8 space-y-6 text-base leading-8 text-slate-300">
+        <div>
+          <h2 class="text-lg font-semibold text-white">Information pursuant to § 5 TMG</h2>
+          <p class="mt-2">BenchTrust GmbH i.G.<br />Lange Strasse 75<br />76530 Baden-Baden<br />Germany</p>
+        </div>
+
+        <div>
+          <h2 class="text-lg font-semibold text-white">Represented by</h2>
+          <p class="mt-2">Managing Directors: Bernd Burkhardt, Holger Schmeding</p>
+        </div>
+
+        <div>
+          <h2 class="text-lg font-semibold text-white">Contact</h2>
+          <p class="mt-2">Email: contact@benchtrust.com</p>
+        </div>
+
+        <div>
+          <h2 class="text-lg font-semibold text-white">Commercial register</h2>
+          <p class="mt-2">Entry in the commercial register.<br />The company is in the process of incorporation. The commercial register number will be added upon registration.</p>
+        </div>
       </div>
+
       <a class="mt-10 inline-flex rounded-full border border-white/15 px-5 py-3 text-sm font-semibold text-white transition hover:border-cyan-300/60 hover:text-cyan-200" href="/">
         Back to homepage
       </a>
     </div>
+  </main>
+</Layout>
   </main>
 </Layout>

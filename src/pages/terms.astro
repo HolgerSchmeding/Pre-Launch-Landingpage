@@ -1,0 +1,48 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { companyName } from '../content/site';
+---
+
+<Layout
+  locale="en"
+  title={`Terms | ${companyName}`}
+  description="Terms of use for the BenchTrust pre-launch waitlist."
+  path="/terms/"
+  alternatePath="/agb/"
+>
+  <main class="mx-auto max-w-3xl px-6 py-24 text-slate-200 md:px-10">
+    <div class="panel-surface rounded-[2rem] p-8 md:p-12">
+      <p class="text-sm uppercase tracking-[0.24em] text-cyan-300/80">BenchTrust GmbH i.G.</p>
+      <h1 class="mt-4 font-display text-4xl text-white">Terms of Use</h1>
+      <p class="mt-2 text-sm text-slate-400">Pre-launch waitlist</p>
+
+      <div class="mt-8 space-y-8 text-base leading-8 text-slate-300">
+
+        <div>
+          <h2 class="text-lg font-semibold text-white">1. Subject matter</h2>
+          <p class="mt-2">BenchTrust GmbH i.G. offers interested parties (B2B buyers and providers) the opportunity to register for non-binding early access to the planned sourcing platform.</p>
+        </div>
+
+        <div>
+          <h2 class="text-lg font-semibold text-white">2. Registration and target audience</h2>
+          <p class="mt-2">Our offer is directed exclusively at businesses, legal entities under public law or special funds under public law within the meaning of § 14 BGB (B2B). Registration by consumers is excluded. By submitting the form, you confirm that you are acting in a business capacity.</p>
+        </div>
+
+        <div>
+          <h2 class="text-lg font-semibold text-white">3. Non-binding nature</h2>
+          <p class="mt-2">Signing up for the waitlist is free of charge and does not create any legal obligation to subsequently purchase or use paid premium packages. Likewise, there is no legal entitlement to admission to the closed beta phase or to a specific launch date.</p>
+        </div>
+
+        <div>
+          <h2 class="text-lg font-semibold text-white">4. Communication</h2>
+          <p class="mt-2">By registering, you agree that we may contact you by email regarding the development status, launch dates and platform-specific news. You can unsubscribe from these notifications at any time.</p>
+        </div>
+
+      </div>
+
+      <a class="mt-10 inline-flex rounded-full border border-white/15 px-5 py-3 text-sm font-semibold text-white transition hover:border-cyan-300/60 hover:text-cyan-200" href="/">
+        Back to homepage
+      </a>
+    </div>
+  </main>
+</Layout>

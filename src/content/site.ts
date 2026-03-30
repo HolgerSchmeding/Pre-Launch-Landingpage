@@ -17,8 +17,6 @@ export const content = {
       claim: 'Smarter Procurement. Powered by AI. Driven by Trust.',
       subheadline:
         'BenchTrust is the first AI-orchestrated sourcing platform that brings buyers and providers together exactly where decisions are made today.',
-      primaryCta: 'Join the waitlist',
-      primaryCtaHref: '#waitlist',
       secondaryCta: 'Follow our launch on LinkedIn',
       secondaryCtaHref: linkedInUrl,
       secondaryCtaExternal: true,
@@ -92,7 +90,7 @@ export const content = {
             'Data-driven maturity assessments and ROI calculators',
             'Send highly relevant RFPs in just a few clicks'
           ],
-          ctaLabel: 'Start comparing',
+          ctaLabel: '▶ Provider Search Preview',
           ctaHref: '#waitlist'
         },
         {
@@ -107,7 +105,7 @@ export const content = {
             'Reduce friction and receive qualified leads and RFPs directly',
             'Turn hidden demand into measurable revenue'
           ],
-          ctaLabel: 'Claim your profile',
+          ctaLabel: '▶ Provider Offering Preview',
           ctaHref: '#waitlist'
         }
       ]
@@ -176,16 +174,15 @@ export const content = {
         name: 'Alex Morgan',
         email: 'alex@company.com',
         role: 'Select your role',
-        feedback: 'Your answer feeds directly into our development (optional)'
+        feedback: 'Share your biggest pain point. Your input feeds directly into our development...'
       },
       roleOptions: [
         { value: 'buyer', label: 'Buyer' },
-        { value: 'software-provider', label: 'Software Provider' },
-        { value: 'service-provider', label: 'Service Provider' }
+        { value: 'provider', label: 'Provider' }
       ],
-      submit: 'Share insights & get early access',
+      submit: 'Join as Co-Creator',
       privacyHint:
-        'By signing up, you secure exclusive access to the beta version in June. We will only contact you for important launch updates and targeted feature surveys.',
+        'By signing up, you secure exclusive access to the beta version in June. We will only contact you for important launch updates and targeted feature surveys. <a href="/privacy/" class="underline hover:text-white">Privacy</a> | <a href="/terms/" class="underline hover:text-white">Terms</a>',
       successMessage: 'Welcome to the Co-Creator Panel! We will be in touch.',
       errorMessage: 'Submission failed. Please try again in a moment.',
       configErrorMessage:
