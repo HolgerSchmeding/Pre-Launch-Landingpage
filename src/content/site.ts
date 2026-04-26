@@ -13,7 +13,7 @@ export const content = {
     },
     hero: {
       pretitle: 'Launching June 2026',
-      headline: 'B2B procurement has been a black box for long enough.',
+      headline: 'Procurement without the guesswork.',
       claim: 'Smarter Procurement. Powered by AI. Driven by Trust.',
       subheadline:
         'BenchTrust is the first AI-orchestrated sourcing platform that brings buyers and providers together exactly where decisions are made today.',
