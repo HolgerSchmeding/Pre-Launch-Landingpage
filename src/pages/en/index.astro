@@ -6,23 +6,22 @@ import ProblemSection from '../../components/ProblemSection.astro';
 import AudienceSplit from '../../components/AudienceSplit.astro';
 import LaunchCommunitySection from '../../components/LaunchCommunitySection.astro';
 import FinalCtaSection from '../../components/FinalCtaSection.astro';
-import WaitlistSection from '../../components/WaitlistSection.astro';
 import { content } from '../../content/site';
 
-const page = content.de;
+const page = content.en;
 ---
 
 <Layout
-  locale="de"
+  locale="en"
   title={page.meta.title}
   description={page.meta.description}
-  path="/de/"
+  path="/en/"
   alternatePath="/"
 >
-  <HeroSection locale="de" page={page} />
+  <HeroSection locale="en" page={page} />
   <ProblemSection page={page} />
   <AudienceSplit page={page} />
-  <LaunchCommunitySection locale="de" page={page} />
+  <LaunchCommunitySection locale="en" page={page} />
   <FinalCtaSection page={page} />
-  <Footer locale="de" page={page} />
+  <Footer locale="en" page={page} />
 </Layout>

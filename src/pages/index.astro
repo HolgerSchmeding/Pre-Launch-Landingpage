@@ -8,20 +8,20 @@ import LaunchCommunitySection from '../components/LaunchCommunitySection.astro';
 import FinalCtaSection from '../components/FinalCtaSection.astro';
 import { content } from '../content/site';
 
-const page = content.en;
+const page = content.de;
 ---
 
 <Layout
-  locale="en"
+  locale="de"
   title={page.meta.title}
   description={page.meta.description}
   path="/"
-  alternatePath="/de/"
+  alternatePath="/en/"
 >
-  <HeroSection locale="en" page={page} />
+  <HeroSection locale="de" page={page} />
   <ProblemSection page={page} />
   <AudienceSplit page={page} />
-  <LaunchCommunitySection locale="en" page={page} />
+  <LaunchCommunitySection locale="de" page={page} />
   <FinalCtaSection page={page} />
-  <Footer locale="en" page={page} />
+  <Footer locale="de" page={page} />
 </Layout>

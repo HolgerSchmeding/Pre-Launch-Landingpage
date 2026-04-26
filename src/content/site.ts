@@ -17,6 +17,8 @@ export const content = {
       claim: 'Smarter Procurement. Powered by AI. Driven by Trust.',
       subheadline:
         'BenchTrust is the first AI-orchestrated sourcing platform that brings buyers and providers together exactly where decisions are made today.',
+      primaryCta: '👉 Secure Early Access',
+      primaryCtaHref: '#waitlist',
       secondaryCta: 'Follow our launch on LinkedIn',
       secondaryCtaHref: linkedInUrl,
       secondaryCtaExternal: true,
@@ -71,24 +73,24 @@ export const content = {
     },
     audience: {
       eyebrow: 'Two Perspectives. One Platform.',
-      headline: 'Find the right solution or get found as the right solution.',
+      headline: 'One platform. Two clear perspectives.',
       intro: [
-        'No disconnected tools.',
-        'No broken handoffs.',
+        'No media breaks.',
+        'No fragmented tools.',
         'Just efficient sourcing.'
       ],
       cards: [
         {
           id: 'buyer-path',
           variant: 'buyer',
-          label: 'For Buyers: Your Sourcing Copilot',
-          title: 'Compare faster. Decide with more confidence.',
+          label: 'For Buyers',
+          title: 'Your Sourcing Copilot',
           text:
-            'Weeks of manual market research come to an end. Our AI agent analyzes your requirements, runs objective benchmarking and delivers vendor comparisons that actually fit.',
+            'Compare software and services in minutes instead of weeks. Data-driven, objective and 100% free for buyers.',
           points: [
-            '100% free for buyers',
-            'Data-driven maturity assessments and ROI calculators',
-            'Send highly relevant RFPs in just a few clicks'
+            'Faster shortlist: automated maturity analyses and objective benchmarking.',
+            'Decide with confidence: solid ROI calculators and verified peer insights.',
+            'Source efficiently: send tailored RFPs in just a few clicks.'
           ],
           ctaLabel: '▶ Provider Search Preview',
           ctaHref: '#waitlist'
@@ -96,14 +98,14 @@ export const content = {
         {
           id: 'provider-path',
           variant: 'provider',
-          label: 'For Providers: Your Lead Engine',
-          title: 'Win back your influence.',
+          label: 'For Providers',
+          title: 'Your Lead Engine',
           text:
-            'Stop losing deals because AI-assisted research turns your company into a dead letter box. Become visible exactly when the buyer shortlist is formed: verified, trusted and ready to convert.',
+            'Be part of the decision, not just the shortlist. Turn anonymous traffic into qualified B2B leads.',
           points: [
-            'Claim profile ownership and show brand accountability',
-            'Reduce friction and receive qualified leads and RFPs directly',
-            'Turn hidden demand into measurable revenue'
+            'Reclaim your influence: claim your verified profile and become visible immediately.',
+            'Qualified demand: receive direct RFP requests – without friction.',
+            'Win deals: turn hidden demand into measurable revenue.'
           ],
           ctaLabel: '▶ Provider Offering Preview',
           ctaHref: '#waitlist'
@@ -111,14 +113,14 @@ export const content = {
       ]
     },
     launchCommunity: {
-      eyebrow: 'Launching June 2026',
-      headline: 'The countdown is on. Join us on the way to launch.',
+      eyebrow: 'Co-Creator Panel',
+      headline: 'The countdown is on. Build the future with us.',
       text:
-        'Behind the scenes, the servers are already heating up: BenchTrust officially launches in June 2026. We are not building this solution behind closed doors. We are building it with the community.',
+        'BenchTrust goes live in June 2026 – and your input shapes how the platform will look. We are not building this solution behind closed doors, but together with buyers and providers who know the B2B market.',
       body:
-        'Follow our path to go-live transparently on LinkedIn. Get weekly sneak peeks into the software, discuss the future of B2B procurement with us and do not miss the starting signal.',
-      bullets: ['Weekly product sneak peeks', 'Transparent build-in-public launch updates', 'Direct discussion around the future of B2B procurement'],
-      ctaLabel: 'Become a LinkedIn follower now'
+        'As a Co-Creator you receive exclusive sneak peeks, take part in feature voting and gain direct influence on product development through personal Founder Chats.',
+      bullets: ['15-minute Founder Chats on your pain points', 'Feature voting via LinkedIn', 'Exclusive sneak peeks every 3 weeks'],
+      ctaLabel: '👉 Become a LinkedIn follower now'
     },
     trust: {
       eyebrow: 'Why BenchTrust',
@@ -182,7 +184,7 @@ export const content = {
       ],
       submit: 'Join as Co-Creator',
       privacyHint:
-        'By signing up, you secure exclusive access to the beta version in June. We will only contact you for important launch updates and targeted feature surveys. <a href="/privacy/" class="underline hover:text-white">Privacy</a> | <a href="/terms/" class="underline hover:text-white">Terms</a>',
+        'By signing up, you secure exclusive access to the beta version in June. We will only contact you for important launch updates and targeted feature surveys. <a href="/en/privacy/" class="underline hover:text-white">Privacy</a> | <a href="/en/terms/" class="underline hover:text-white">Terms</a>',
       successMessage: 'Welcome to the Co-Creator Panel! We will be in touch.',
       errorMessage: 'Submission failed. Please try again in a moment.',
       configErrorMessage:
