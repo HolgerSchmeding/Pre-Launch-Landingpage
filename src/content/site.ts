@@ -13,7 +13,7 @@ export const content = {
     },
     hero: {
       pretitle: 'Launching June 2026',
-      headline: 'Procurement without the guesswork.',
+      headline: 'Procurement is not a blind flight',
       claim: 'Smarter Procurement. Powered by AI. Driven by Trust.',
       subheadline:
         'BenchTrust is the first AI-orchestrated sourcing platform that brings buyers and providers together exactly where decisions are made today.',
@@ -269,7 +269,7 @@ export const content = {
       ]
     },
     audience: {
-      eyebrow: 'Zwei Perspektiven. Eine Plattform.',
+      eyebrow: 'Komplette Transparenz für Einkauf und Anbieter.',
       headline: 'Eine Plattform. Zwei klare Perspektiven.',
       intro: [
         'Keine Medienbrüche.',
