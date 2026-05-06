@@ -14,6 +14,7 @@ const roleField = import.meta.env.PUBLIC_HUBSPOT_ROLE_FIELD ?? 'benchtrust_role'
 const tagField = import.meta.env.PUBLIC_HUBSPOT_TAG_FIELD ?? 'benchtrust_tag';
 const nameField = import.meta.env.PUBLIC_HUBSPOT_NAME_FIELD ?? 'firstname';
 const waitlistTag = import.meta.env.PUBLIC_HUBSPOT_WAITLIST_TAG ?? 'Waitlist';
+const notificationEmail = import.meta.env.PUBLIC_WAITLIST_NOTIFICATION_EMAIL ?? 'contact@benchtrust.com';
 ---
 
 <form
@@ -24,6 +25,7 @@ const waitlistTag = import.meta.env.PUBLIC_HUBSPOT_WAITLIST_TAG ?? 'Waitlist';
   data-tag-field={tagField}
   data-name-field={nameField}
   data-waitlist-tag={waitlistTag}
+  data-notification-email={notificationEmail}
   data-success-message={page.waitlist.successMessage}
   data-error-message={page.waitlist.errorMessage}
   data-config-error-message={page.waitlist.configErrorMessage}
@@ -92,12 +94,40 @@ const waitlistTag = import.meta.env.PUBLIC_HUBSPOT_WAITLIST_TAG ?? 'Waitlist';
       const tagField = form.dataset.tagField;
       const nameField = form.dataset.nameField;
       const waitlistTag = form.dataset.waitlistTag;
+      const notificationEmail = form.dataset.notificationEmail;
 
       status.textContent = '';
 
       if (!portalId || !formId || !roleField || !tagField || !nameField || !waitlistTag) {
-        status.textContent = form.dataset.configErrorMessage || 'HubSpot is not configured yet.';
-        status.dataset.state = 'error';
+        if (!notificationEmail) {
+          status.textContent = form.dataset.configErrorMessage || 'HubSpot is not configured yet.';
+          status.dataset.state = 'error';
+          return;
+        }
+
+        const name = String(formData.get('name') || '');
+        const email = String(formData.get('email') || '');
+        const role = form.querySelector('[name="role"] option:checked')?.textContent || String(formData.get('role') || '');
+        const feedback = String(formData.get('feedback') || '');
+        const subject = `Neue BenchTrust Co-Creator Anmeldung: ${name || email}`;
+        const body = [
+          'Neue Co-Creator Anmeldung ueber die BenchTrust Landingpage',
+          '',
+          `Name: ${name}`,
+          `E-Mail: ${email}`,
+          `Rolle: ${role}`,
+          '',
+          'Feedback:',
+          feedback || '-',
+          '',
+          `Seite: ${window.location.href}`
+        ].join('\n');
+
+        window.location.href = `mailto:${encodeURIComponent(notificationEmail)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        status.textContent = document.documentElement.lang === 'en'
+          ? 'Please send the email that just opened so we receive your Co-Creator request.'
+          : 'Bitte senden Sie die geoeffnete E-Mail ab, damit wir Ihre Co-Creator-Anmeldung erhalten.';
+        status.dataset.state = 'success';
         return;
       }
 
