@@ -179,8 +179,10 @@ export const content = {
         feedback: 'Share your biggest pain point. Your input feeds directly into our development...'
       },
       roleOptions: [
-        { value: 'buyer', label: 'Buyer' },
-        { value: 'provider', label: 'Provider' }
+        { value: 'buyer', label: 'Buyer / Procurement (I purchase)' },
+        { value: 'provider', label: 'Provider / Vendor (I sell B2B solutions)' },
+        { value: 'advisor', label: 'Advisor / Analyst (I advise buyers or providers)' },
+        { value: 'investor', label: 'Investor / Partner (strategic interest)' }
       ],
       submit: 'Join as Co-Creator',
       privacyHint:
@@ -376,8 +378,10 @@ export const content = {
         feedback: 'Teilen Sie uns Ihren größten Pain Point mit. Ihr Input fließt direkt in die Entwicklung ein...'
       },
       roleOptions: [
-        { value: 'buyer', label: 'Einkäufer' },
-        { value: 'provider', label: 'Anbieter' }
+        { value: 'buyer', label: 'Einkäufer / Procurement (kaufe ein)' },
+        { value: 'provider', label: 'Anbieter / Provider (verkaufe B2B-Lösungen)' },
+        { value: 'advisor', label: 'Berater / Analyst (berate Einkauf oder Anbieter)' },
+        { value: 'investor', label: 'Investor / Partner (strategisches Interesse)' }
       ],
       submit: 'Als Co-Creator eintragen',
       privacyHint:
