@@ -1,5 +1,5 @@
 export const siteUrl = 'https://www.benchtrust.com';
-export const companyName = 'BenchTrust GmbH i.G.';
+export const companyName = 'BenchTrust GmbH';
 export const linkedInUrl = 'https://www.linkedin.com/in/bernd-burkhardt-028496173/';
 
 export type Locale = 'en' | 'de';
@@ -12,13 +12,13 @@ export const content = {
         'BenchTrust is the AI-native decision environment where buyers compare solutions faster and providers become visible earlier in B2B procurement.'
     },
     hero: {
-      pretitle: 'Launching June 2026',
+      pretitle: 'Go Live 1 July 2026',
       headline: 'Procurement is not a blind flight',
       claim: 'Smarter Procurement. Powered by AI. Driven by Trust.',
       subheadline:
         'BenchTrust is the first AI-orchestrated sourcing platform that brings buyers and providers together exactly where decisions are made today.',
       primaryCta: '👉 Secure Early Access',
-      primaryCtaHref: '#waitlist',
+      primaryCtaHref: '#launch-community',
       secondaryCta: 'Follow our launch on LinkedIn',
       secondaryCtaHref: linkedInUrl,
       secondaryCtaExternal: true,
@@ -93,7 +93,7 @@ export const content = {
             'Source efficiently: send tailored RFPs in just a few clicks.'
           ],
           ctaLabel: '▶ Provider Search Preview',
-          ctaHref: '#waitlist'
+          ctaPreview: 'providerSearch'
         },
         {
           id: 'provider-path',
@@ -108,7 +108,7 @@ export const content = {
             'Win deals: turn hidden demand into measurable revenue.'
           ],
           ctaLabel: '▶ Provider Offering Preview',
-          ctaHref: '#waitlist'
+          ctaPreview: 'providerOffering'
         }
       ]
     },
@@ -116,7 +116,7 @@ export const content = {
       eyebrow: 'Co-Creator Panel',
       headline: 'The countdown is on. Build the future with us.',
       text:
-        'BenchTrust goes live in June 2026 – and your input shapes how the platform will look. We are not building this solution behind closed doors, but together with buyers and providers who know the B2B market.',
+        'BenchTrust goes live on 1 July 2026 – and your input shapes how the platform will look. We are not building this solution behind closed doors, but together with buyers and providers who know the B2B market.',
       body:
         'As a Co-Creator you receive exclusive sneak peeks, take part in feature voting and gain direct influence on product development through personal Founder Chats.',
       bullets: ['15-minute Founder Chats on your pain points', 'Feature voting via LinkedIn', 'Exclusive sneak peeks every 3 weeks'],
@@ -151,7 +151,7 @@ export const content = {
       eyebrow: 'Co-Creator Panel',
       headline: 'Become a BenchTrust Co-Creator.',
       text:
-        'We are not building BenchTrust behind closed doors – we are building it with you. Your input shapes what the platform looks like in June. Trade your expertise for exclusive early access.',
+        'We are not building BenchTrust behind closed doors – we are building it with you. Your input shapes what the platform looks like at go live on 1 July 2026. Trade your expertise for exclusive early access.',
       audienceTags: ['15-minute Founder Chat', 'Feature voting via LinkedIn', 'Exclusive Sneak Peeks'],
       benefits: [
         {
@@ -184,7 +184,7 @@ export const content = {
       ],
       submit: 'Join as Co-Creator',
       privacyHint:
-        'By signing up, you secure exclusive access to the beta version in June. We will only contact you for important launch updates and targeted feature surveys. <a href="/en/privacy/" class="underline hover:text-white">Privacy</a> | <a href="/en/terms/" class="underline hover:text-white">Terms</a>',
+        'By signing up, you secure exclusive access to the beta version in July. We will only contact you for important launch updates and targeted feature surveys. <a href="/en/privacy/" class="underline hover:text-white">Privacy</a> | <a href="/en/terms/" class="underline hover:text-white">Terms</a>',
       successMessage: 'Welcome to the Co-Creator Panel! We will be in touch.',
       errorMessage: 'Submission failed. Please try again in a moment.',
       configErrorMessage:
@@ -192,7 +192,7 @@ export const content = {
     },
     finalCta: {
       headline: 'See you on LinkedIn!',
-      text: 'Not ready to sign up yet, but still want to know where this journey is going? Join our growing community. Follow the BenchTrust team on the road to launch in June, discuss AI in procurement with us and get every update first-hand.',
+      text: 'Not ready to sign up yet, but still want to know where this journey is going? Join our growing community. Follow the BenchTrust team on the road to go live on 1 July 2026, discuss AI in procurement with us and get every update first-hand.',
       linkedinLabel: 'Become a LinkedIn follower now'
     },
     footer: {
@@ -209,13 +209,13 @@ export const content = {
         'BenchTrust ist die AI-native Entscheidungsumgebung, in der Einkäufer schneller vergleichen und Anbieter früher im B2B-Entscheidungsprozess sichtbar werden.'
     },
     hero: {
-      pretitle: 'Launching June 2026',
+      pretitle: 'Go Live 1. Juli 2026',
       headline: 'B2B-Einkauf ohne Blindflug.',
       claim: 'Smarter Procurement. Powered by AI. Driven by Trust.',
       subheadline:
         'BenchTrust ist die erste KI-orchestrierte Sourcing-Plattform, die B2B-Einkäufer und Anbieter exakt dort zusammenbringt, wo heute Entscheidungen fallen.',
       primaryCta: '👉 Early Access sichern',
-      primaryCtaHref: '#waitlist',
+      primaryCtaHref: '#launch-community',
       secondaryCta: '🔗 Begleiten Sie uns auf LinkedIn',
       secondaryCtaHref: linkedInUrl,
       secondaryCtaExternal: true,
@@ -290,7 +290,7 @@ export const content = {
             'Effizient ausschreiben: Passgenaue RFPs mit wenigen Klicks versenden.'
           ],
           ctaLabel: '▶ Provider Search Preview',
-          ctaHref: '#waitlist'
+          ctaPreview: 'providerSearch'
         },
         {
           id: 'provider-path',
@@ -305,7 +305,7 @@ export const content = {
             'Deals sichern: Verdeckte Nachfrage in messbaren Umsatz verwandeln.'
           ],
           ctaLabel: '▶ Provider Offering Preview',
-          ctaHref: '#waitlist'
+          ctaPreview: 'providerOffering'
         }
       ]
     },
@@ -313,7 +313,7 @@ export const content = {
       eyebrow: 'Co-Creator Panel',
       headline: 'Der Countdown läuft. Bauen Sie mit uns die Zukunft.',
       text:
-        'Im Juni 2026 geht BenchTrust live – und Ihr Input bestimmt, wie die Plattform aussehen wird. Wir bauen diese Lösung nicht im stillen Kämmerlein, sondern gemeinsam mit Einkäufern und Anbietern, die den B2B-Markt kennen.',
+        'Am 1. Juli 2026 geht BenchTrust live – und Ihr Input bestimmt, wie die Plattform aussehen wird. Wir bauen diese Lösung nicht im stillen Kämmerlein, sondern gemeinsam mit Einkäufern und Anbietern, die den B2B-Markt kennen.',
       body:
         'Als Co-Creator erhalten Sie exklusive Sneak Peeks, nehmen an Feature-Votings teil und können in persönlichen Founder Chats direkten Einfluss auf die Produktentwicklung nehmen.',
       bullets: ['15-Minuten Founder Chats zu Ihren Pain Points', 'Feature-Voting via LinkedIn', 'Exklusive Sneak Peeks alle 3 Wochen'],
@@ -348,7 +348,7 @@ export const content = {
       eyebrow: 'Co-Creator Panel',
       headline: 'Werden Sie BenchTrust Co-Creator.',
       text:
-        'Wir bauen BenchTrust nicht im stillen Kämmerlein – sondern mit Ihnen. Ihr Input bestimmt, wie die Plattform im Juni aussehen wird. Tauschen Sie Expertenwissen gegen exklusiven Vorab-Zugang.',
+        'Wir bauen BenchTrust nicht im stillen Kämmerlein – sondern mit Ihnen. Ihr Input bestimmt, wie die Plattform zum Go Live am 1. Juli 2026 aussehen wird. Tauschen Sie Expertenwissen gegen exklusiven Vorab-Zugang.',
       audienceTags: ['15-Minuten Founder Chat', 'Feature-Voting via LinkedIn', 'Exklusive Sneak Peeks'],
       benefits: [
         {
@@ -381,7 +381,7 @@ export const content = {
       ],
       submit: 'Als Co-Creator eintragen',
       privacyHint:
-        'Mit Ihrer Anmeldung sichern Sie sich exklusiven Zugang zur Beta-Version im Juni. Wir kontaktieren Sie für wichtige Launch-Updates und gezielte Umfragen zu neuen Features. <a href="/datenschutz/" class="underline hover:text-white">Datenschutz</a> | <a href="/agb/" class="underline hover:text-white">AGB</a>',
+        'Mit Ihrer Anmeldung sichern Sie sich exklusiven Zugang zur Beta-Version im Juli. Wir kontaktieren Sie für wichtige Launch-Updates und gezielte Umfragen zu neuen Features. <a href="/datenschutz/" class="underline hover:text-white">Datenschutz</a> | <a href="/agb/" class="underline hover:text-white">AGB</a>',
       successMessage: 'Willkommen im Co-Creator Panel! Wir melden uns bei Ihnen.',
       errorMessage: 'Die Übermittlung ist fehlgeschlagen. Bitte versuchen Sie es erneut.',
       configErrorMessage:
@@ -389,7 +389,7 @@ export const content = {
     },
     finalCta: {
       headline: 'Wir sehen uns auf LinkedIn!',
-      text: 'Sie möchten sich noch nicht eintragen, aber trotzdem wissen, wie die Reise weitergeht? Kein Problem. Werden Sie Teil unserer wachsenden Community. Begleiten Sie unser Team auf dem Weg zum Live-Gang im Juni, diskutieren Sie mit uns über KI im Procurement und erhalten Sie alle Updates aus erster Hand.',
+      text: 'Sie möchten sich noch nicht eintragen, aber trotzdem wissen, wie die Reise weitergeht? Kein Problem. Werden Sie Teil unserer wachsenden Community. Begleiten Sie unser Team auf dem Weg zum Go Live am 1. Juli 2026, diskutieren Sie mit uns über KI im Procurement und erhalten Sie alle Updates aus erster Hand.',
       linkedinLabel: 'Jetzt Follower auf LinkedIn werden'
     },
     footer: {

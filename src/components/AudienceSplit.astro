@@ -1,11 +1,64 @@
 ---
-import type { PageContent } from '../content/site';
+import type { Locale, PageContent } from '../content/site';
 
 interface Props {
   page: PageContent;
+  locale: Locale;
 }
 
-const { page } = Astro.props;
+const { page, locale } = Astro.props;
+
+const galleries = {
+  providerSearch: {
+    title: locale === 'de' ? 'Provider Search Preview' : 'Provider Search Preview',
+    captions: locale === 'de'
+      ? [
+          'Startseite & intelligente Suche – Software, Dienstleistung oder Smart Analytics in Sekunden.',
+          'Direkter Einstieg in die Vorteile: Übersicht, RFPs per Klick, KI-gestützte Tools.',
+          'Nahtloser Übergang vom Hero zu den Nutzenversprechen – ohne Medienbruch.',
+          '4-stufiger Such-Workflow: Filtern, Vergleichen, RFP, Entscheiden.'
+        ]
+      : [
+          'Home & smart search – software, services or smart analytics in seconds.',
+          'Direct entry into the value props: overview, click-based RFPs, AI-powered tools.',
+          'Seamless transition from hero to value props – no media break.',
+          '4-step search workflow: filter, compare, RFP, decide.'
+        ],
+    images: [
+      '/previews/provider-search-1.png',
+      '/previews/provider-search-2.png',
+      '/previews/provider-search-3.png',
+      '/previews/provider-search-4.png'
+    ]
+  },
+  providerOffering: {
+    title: locale === 'de' ? 'Provider Offering Preview' : 'Provider Offering Preview',
+    captions: locale === 'de'
+      ? [
+          'Upgrade-Story: Vom Freemium-Profil zum sichtbaren Lead-Engine-Auftritt.',
+          'Profil als stärkster digitaler Vertriebskanal – Profil-Hoheit, Kundenkontakt, Sales-as-a-Service.',
+          'Pakete & Preise: Basis (Freemium), Showcase und Lead Engine als Flaggschiff.'
+        ]
+      : [
+          'Upgrade story: from a freemium profile to a visible Lead Engine presence.',
+          'Profile as your strongest digital sales channel – ownership, direct contact, sales-as-a-service.',
+          'Plans & pricing: Basis (freemium), Showcase and Lead Engine flagship.'
+        ],
+    images: [
+      '/previews/provider-offering-1.png',
+      '/previews/provider-offering-2.png',
+      '/previews/provider-offering-3.png'
+    ]
+  }
+} as const;
+
+const labels = locale === 'de'
+  ? { close: 'Schliessen', prev: 'Vorheriges Bild', next: 'Naechstes Bild', hint: 'Tipp: Pfeiltasten zum Navigieren, Esc zum Schliessen.' }
+  : { close: 'Close', prev: 'Previous image', next: 'Next image', hint: 'Tip: arrow keys to navigate, Esc to close.' };
+
+const galleryMeta = Object.fromEntries(
+  Object.entries(galleries).map(([k, v]) => [k, { captions: v.captions, total: v.images.length }])
+);
 ---
 
 <section class="px-6 py-12 md:px-10 md:py-16">
@@ -44,10 +97,149 @@ const { page } = Astro.props;
             ))}
           </ul>
           <div class="mt-8">
-            <a href={card.ctaHref} class={card.variant === 'buyer' ? 'cta-primary' : 'cta-secondary'}>{card.ctaLabel}</a>
+            <button
+              type="button"
+              data-preview-trigger={card.ctaPreview}
+              class:list={[card.variant === 'buyer' ? 'cta-primary' : 'cta-secondary', 'border-0']}
+            >{card.ctaLabel}</button>
           </div>
         </article>
       ))}
     </div>
   </div>
 </section>
+
+{Object.entries(galleries).map(([key, gallery]) => (
+  <div
+    class="preview-modal hidden fixed inset-0 z-50 items-center justify-center bg-black/85 p-4 backdrop-blur"
+    data-preview-modal={key}
+    role="dialog"
+    aria-modal="true"
+    aria-hidden="true"
+  >
+    <button
+      type="button"
+      data-preview-close
+      class="absolute right-4 top-4 inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-black/60 text-white transition hover:border-cyan-300/60 hover:text-cyan-200"
+      aria-label={labels.close}
+    >
+      <span aria-hidden="true">×</span>
+    </button>
+    <div class="relative w-full max-w-5xl">
+      <p class="text-center text-sm uppercase tracking-[0.24em] text-cyan-300/80">{gallery.title}</p>
+      <div class="relative mt-3 overflow-hidden rounded-2xl border border-white/10 bg-black/40">
+        {gallery.images.map((src, index) => (
+          <img
+            src={src}
+            alt={gallery.captions[index] ?? ''}
+            class="preview-slide hidden h-auto w-full object-contain"
+            data-preview-slide={index}
+            loading="lazy"
+          />
+        ))}
+        <button
+          type="button"
+          data-preview-prev
+          class="absolute left-3 top-1/2 -translate-y-1/2 inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/20 bg-black/60 text-white transition hover:border-cyan-300/60 hover:text-cyan-200"
+          aria-label={labels.prev}
+        >
+          <span aria-hidden="true">‹</span>
+        </button>
+        <button
+          type="button"
+          data-preview-next
+          class="absolute right-3 top-1/2 -translate-y-1/2 inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/20 bg-black/60 text-white transition hover:border-cyan-300/60 hover:text-cyan-200"
+          aria-label={labels.next}
+        >
+          <span aria-hidden="true">›</span>
+        </button>
+      </div>
+      <div class="mt-3 flex items-center justify-between gap-4 text-sm text-slate-300">
+        <p class="flex-1" data-preview-caption></p>
+        <span class="font-mono text-xs text-slate-400" data-preview-counter></span>
+      </div>
+      <p class="mt-2 text-center text-xs text-slate-500">{labels.hint}</p>
+    </div>
+  </div>
+))}
+
+<script is:inline define:vars={{ galleryMeta }}>
+  (function () {
+    const triggers = document.querySelectorAll('[data-preview-trigger]');
+    const modals = document.querySelectorAll('[data-preview-modal]');
+    if (!triggers.length || !modals.length) return;
+
+    const state = new Map();
+
+    modals.forEach((modal) => {
+      const key = modal.getAttribute('data-preview-modal');
+      state.set(modal, { key, index: 0 });
+      const slides = modal.querySelectorAll('[data-preview-slide]');
+      if (slides[0]) slides[0].classList.remove('hidden');
+      modal.querySelector('[data-preview-prev]')?.addEventListener('click', () => navigate(modal, -1));
+      modal.querySelector('[data-preview-next]')?.addEventListener('click', () => navigate(modal, 1));
+      modal.querySelector('[data-preview-close]')?.addEventListener('click', () => closeModal(modal));
+      modal.addEventListener('click', (event) => {
+        if (event.target === modal) closeModal(modal);
+      });
+      updateCaption(modal);
+    });
+
+    triggers.forEach((trigger) => {
+      trigger.addEventListener('click', () => {
+        const key = trigger.getAttribute('data-preview-trigger');
+        if (!key) return;
+        const modal = document.querySelector('[data-preview-modal="' + key + '"]');
+        if (modal) openModal(modal);
+      });
+    });
+
+    document.addEventListener('keydown', (event) => {
+      const open = document.querySelector('[data-preview-modal].is-open');
+      if (!open) return;
+      if (event.key === 'Escape') closeModal(open);
+      if (event.key === 'ArrowLeft') navigate(open, -1);
+      if (event.key === 'ArrowRight') navigate(open, 1);
+    });
+
+    function openModal(modal) {
+      modal.classList.remove('hidden');
+      modal.classList.add('is-open');
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal(modal) {
+      modal.classList.add('hidden');
+      modal.classList.remove('is-open');
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+
+    function navigate(modal, delta) {
+      const ctx = state.get(modal);
+      const meta = galleryMeta[ctx.key];
+      if (!meta) return;
+      ctx.index = (ctx.index + delta + meta.total) % meta.total;
+      const slides = modal.querySelectorAll('[data-preview-slide]');
+      slides.forEach((slide, idx) => slide.classList.toggle('hidden', idx !== ctx.index));
+      updateCaption(modal);
+    }
+
+    function updateCaption(modal) {
+      const ctx = state.get(modal);
+      const meta = galleryMeta[ctx.key];
+      if (!meta) return;
+      const captionEl = modal.querySelector('[data-preview-caption]');
+      const counterEl = modal.querySelector('[data-preview-counter]');
+      if (captionEl) captionEl.textContent = meta.captions[ctx.index] || '';
+      if (counterEl) counterEl.textContent = (ctx.index + 1) + ' / ' + meta.total;
+    }
+  })();
+</script>
+
+<style>
+  .preview-modal.is-open {
+    display: flex;
+  }
+</style>

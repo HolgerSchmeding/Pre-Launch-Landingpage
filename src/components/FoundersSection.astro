@@ -1,0 +1,90 @@
+---
+import type { Locale } from '../content/site';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+
+const copy = locale === 'de'
+  ? {
+      eyebrow: 'Die Gründer',
+      headline: 'Wer baut BenchTrust?',
+      intro: 'Zwei Unternehmer mit über 50 Jahren kombinierter Erfahrung in B2B-Software, Procurement und Markenführung – mit dem Anspruch, Sourcing in Europa neu zu denken.',
+      founders: [
+        {
+          name: 'Bernd Burkhardt',
+          role: 'Co-Founder & Geschäftsführer',
+          bio: 'Drei Jahrzehnte globale Beschaffungsverantwortung. Jetzt baut er die Plattform, die er sich damals gewünscht hätte.',
+          image: '/founders/bernd-burkhardt.jpg',
+          linkedin: 'https://www.linkedin.com/in/bernd-burkhardt-028496173/'
+        },
+        {
+          name: 'Holger Schmeding',
+          role: 'Co-Founder & Geschäftsführer',
+          bio: '45 Jahre unternehmerische Erfahrung in B2B-Services, Technologie - verantwortlich für Strategie und Aufbau von BenchTrust.',
+          image: '/founders/holger-schmeding.jpg',
+          linkedin: 'https://www.linkedin.com/in/holger-schmeding/'
+        }
+      ]
+    }
+  : {
+      eyebrow: 'The founders',
+      headline: 'Who is building BenchTrust?',
+      intro: 'Two entrepreneurs with more than 50 years of combined experience in B2B software, procurement and brand building – on a mission to rethink sourcing in Europe.',
+      founders: [
+        {
+          name: 'Bernd Burkhardt',
+          role: 'Co-Founder & Managing Director',
+          bio: 'Three decades of global procurement leadership. Now building the platform he wished he had back then.',
+          image: '/founders/bernd-burkhardt.jpg',
+          linkedin: 'https://www.linkedin.com/in/bernd-burkhardt-028496173/'
+        },
+        {
+          name: 'Holger Schmeding',
+          role: 'Co-Founder & Managing Director',
+          bio: '45 years of entrepreneurial experience in B2B services and technology - responsible for strategy and building BenchTrust.',
+          image: '/founders/holger-schmeding.jpg',
+          linkedin: 'https://www.linkedin.com/in/holger-schmeding/'
+        }
+      ]
+    };
+---
+
+<section class="px-6 py-12 md:px-10 md:py-16">
+  <div class="mx-auto max-w-7xl">
+    <div class="max-w-3xl">
+      <p class="brand-kicker text-xs uppercase tracking-[0.24em]">{copy.eyebrow}</p>
+      <h2 class="mt-4 font-display text-4xl font-bold text-[var(--color-primary)] md:text-5xl">{copy.headline}</h2>
+      <p class="mt-5 text-base leading-8 text-slate-300 md:text-lg">{copy.intro}</p>
+    </div>
+
+    <div class="mt-10 grid gap-6 md:grid-cols-2">
+      {copy.founders.map((founder) => (
+        <article class="panel-surface flex gap-5 rounded-[2rem] border border-white/10 p-6 md:p-7">
+          <img
+            src={founder.image}
+            alt={founder.name}
+            loading="lazy"
+            class="h-24 w-24 shrink-0 rounded-2xl border border-white/10 object-cover md:h-28 md:w-28"
+          />
+          <div class="flex flex-col">
+            <p class="text-sm font-semibold uppercase tracking-[0.18em] text-[#ffd867]">{founder.role}</p>
+            <h3 class="mt-2 font-display text-2xl text-white">{founder.name}</h3>
+            <p class="mt-3 text-sm leading-7 text-slate-300">{founder.bio}</p>
+            <a
+              href={founder.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="mt-4 inline-flex w-max items-center gap-2 text-sm font-semibold text-cyan-200 transition hover:text-cyan-100"
+            >
+              <span aria-hidden="true">🔗</span>
+              LinkedIn
+            </a>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

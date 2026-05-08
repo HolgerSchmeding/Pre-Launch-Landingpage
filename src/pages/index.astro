@@ -4,6 +4,7 @@ import Footer from '../components/Footer.astro';
 import HeroSection from '../components/HeroSection.astro';
 import ProblemSection from '../components/ProblemSection.astro';
 import AudienceSplit from '../components/AudienceSplit.astro';
+import FoundersSection from '../components/FoundersSection.astro';
 import LaunchCommunitySection from '../components/LaunchCommunitySection.astro';
 import FinalCtaSection from '../components/FinalCtaSection.astro';
 import { content } from '../content/site';
@@ -20,7 +21,8 @@ const page = content.de;
 >
   <HeroSection locale="de" page={page} />
   <ProblemSection page={page} />
-  <AudienceSplit page={page} />
+  <AudienceSplit locale="de" page={page} />
+  <FoundersSection locale="de" />
   <LaunchCommunitySection locale="de" page={page} />
   <FinalCtaSection page={page} />
   <Footer locale="de" page={page} />

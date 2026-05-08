@@ -15,6 +15,7 @@ const tagField = import.meta.env.PUBLIC_HUBSPOT_TAG_FIELD ?? 'benchtrust_tag';
 const nameField = import.meta.env.PUBLIC_HUBSPOT_NAME_FIELD ?? 'firstname';
 const waitlistTag = import.meta.env.PUBLIC_HUBSPOT_WAITLIST_TAG ?? 'Waitlist';
 const notificationEmail = import.meta.env.PUBLIC_WAITLIST_NOTIFICATION_EMAIL ?? 'contact@benchtrust.com';
+const thankYouUrl = locale === 'en' ? '/en/thanks/' : '/danke/';
 ---
 
 <form
@@ -26,6 +27,7 @@ const notificationEmail = import.meta.env.PUBLIC_WAITLIST_NOTIFICATION_EMAIL ?? 
   data-name-field={nameField}
   data-waitlist-tag={waitlistTag}
   data-notification-email={notificationEmail}
+  data-thank-you-url={thankYouUrl}
   data-success-message={page.waitlist.successMessage}
   data-error-message={page.waitlist.errorMessage}
   data-config-error-message={page.waitlist.configErrorMessage}
@@ -95,6 +97,7 @@ const notificationEmail = import.meta.env.PUBLIC_WAITLIST_NOTIFICATION_EMAIL ?? 
       const nameField = form.dataset.nameField;
       const waitlistTag = form.dataset.waitlistTag;
       const notificationEmail = form.dataset.notificationEmail;
+      const thankYouUrl = form.dataset.thankYouUrl || '/danke/';
 
       status.textContent = '';
 
@@ -123,11 +126,14 @@ const notificationEmail = import.meta.env.PUBLIC_WAITLIST_NOTIFICATION_EMAIL ?? 
           `Seite: ${window.location.href}`
         ].join('\n');
 
-        window.location.href = `mailto:${encodeURIComponent(notificationEmail)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        window.open(`mailto:${encodeURIComponent(notificationEmail)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`, '_self');
         status.textContent = document.documentElement.lang === 'en'
           ? 'Please send the email that just opened so we receive your Co-Creator request.'
           : 'Bitte senden Sie die geoeffnete E-Mail ab, damit wir Ihre Co-Creator-Anmeldung erhalten.';
         status.dataset.state = 'success';
+        window.setTimeout(() => {
+          window.location.href = thankYouUrl;
+        }, 1200);
         return;
       }
 
@@ -163,6 +169,8 @@ const notificationEmail = import.meta.env.PUBLIC_WAITLIST_NOTIFICATION_EMAIL ?? 
         form.reset();
         status.textContent = form.dataset.successMessage || 'Thanks. You are on the waitlist.';
         status.dataset.state = 'success';
+        window.location.href = thankYouUrl;
+        return;
       } catch (error) {
         console.error(error);
         status.textContent = form.dataset.errorMessage || 'Submission failed. Please try again.';

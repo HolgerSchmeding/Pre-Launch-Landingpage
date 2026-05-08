@@ -14,15 +14,30 @@ const navItems = locale === 'de'
       { href: '#market', label: 'Markt' },
       { href: '#buyer-path', label: 'Einkäufer' },
       { href: '#provider-path', label: 'Anbieter' },
-      { href: '#launch-community', label: 'Co-Creator' }
+      { href: '#launch-community', label: 'Beta-Zugang sichern' }
     ]
   : [
       { href: '#market', label: 'Market' },
       { href: '#buyer-path', label: 'Buyers' },
       { href: '#provider-path', label: 'Providers' },
-      { href: '#launch-community', label: 'Co-Creator' }
+      { href: '#launch-community', label: 'Get Beta Access' }
     ];
 const headerCtaLabel = locale === 'de' ? 'Co-Creator Panel' : 'Co-Creator Panel';
+
+const countdownTarget = '2026-06-17T00:00:00+02:00';
+const countdownCopy = locale === 'de'
+  ? {
+      heading: 'Pre-Opening: 17. Juni 2026',
+      sub: 'Sichern Sie sich jetzt Ihren Co-Creator-Platz, bevor die Türen aufgehen.',
+      labels: { days: 'Tage', hours: 'Stunden', minutes: 'Minuten', seconds: 'Sekunden' },
+      live: 'Pre-Opening läuft – Co-Creator-Plätze jetzt sichern.'
+    }
+  : {
+      heading: 'Pre-Opening: 17 June 2026',
+      sub: 'Claim your Co-Creator seat before the doors open.',
+      labels: { days: 'Days', hours: 'Hours', minutes: 'Minutes', seconds: 'Seconds' },
+      live: 'Pre-Opening is live – grab your Co-Creator seat now.'
+    };
 ---
 
 <header class="w-full bg-black">
@@ -51,6 +66,37 @@ const headerCtaLabel = locale === 'de' ? 'Co-Creator Panel' : 'Co-Creator Panel'
         <span class="h-2.5 w-2.5 animate-pulse rounded-full bg-[var(--color-primary)] shadow-[0_0_16px_rgba(255,191,0,0.75)]"></span>
         {page.hero.pretitle}
       </div>
+
+      <div
+        class="mt-6 inline-flex flex-col gap-4 rounded-2xl border border-white/10 bg-black/55 px-6 py-5 backdrop-blur md:flex-row md:items-center md:gap-6"
+        data-countdown
+        data-countdown-target={countdownTarget}
+        data-countdown-live={countdownCopy.live}
+      >
+        <div class="text-left">
+          <p class="font-display text-base font-bold text-white md:text-lg">{countdownCopy.heading}</p>
+          <p class="mt-1 max-w-xs text-sm text-slate-300 md:text-base">{countdownCopy.sub}</p>
+        </div>
+        <div class="flex items-stretch gap-2 md:gap-3" data-countdown-grid>
+          <div class="flex min-w-[64px] flex-col items-center rounded-xl border border-white/10 bg-white/5 px-3 py-2 md:min-w-[76px] md:px-4 md:py-3">
+            <span class="font-display text-2xl font-extrabold text-[var(--color-primary)] tabular-nums md:text-3xl" data-countdown-days>00</span>
+            <span class="mt-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-300 md:text-xs">{countdownCopy.labels.days}</span>
+          </div>
+          <div class="flex min-w-[64px] flex-col items-center rounded-xl border border-white/10 bg-white/5 px-3 py-2 md:min-w-[76px] md:px-4 md:py-3">
+            <span class="font-display text-2xl font-extrabold text-[var(--color-primary)] tabular-nums md:text-3xl" data-countdown-hours>00</span>
+            <span class="mt-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-300 md:text-xs">{countdownCopy.labels.hours}</span>
+          </div>
+          <div class="flex min-w-[64px] flex-col items-center rounded-xl border border-white/10 bg-white/5 px-3 py-2 md:min-w-[76px] md:px-4 md:py-3">
+            <span class="font-display text-2xl font-extrabold text-[var(--color-primary)] tabular-nums md:text-3xl" data-countdown-minutes>00</span>
+            <span class="mt-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-300 md:text-xs">{countdownCopy.labels.minutes}</span>
+          </div>
+          <div class="flex min-w-[64px] flex-col items-center rounded-xl border border-white/10 bg-white/5 px-3 py-2 md:min-w-[76px] md:px-4 md:py-3">
+            <span class="font-display text-2xl font-extrabold text-[var(--color-primary)] tabular-nums md:text-3xl" data-countdown-seconds>00</span>
+            <span class="mt-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-300 md:text-xs">{countdownCopy.labels.seconds}</span>
+          </div>
+        </div>
+      </div>
+
       <h1 class="mt-8 max-w-5xl font-display text-5xl font-extrabold leading-[0.95] text-[var(--color-primary)] sm:text-6xl lg:text-8xl">
         {page.hero.headline}
       </h1>
@@ -63,6 +109,10 @@ const headerCtaLabel = locale === 'de' ? 'Co-Creator Panel' : 'Co-Creator Panel'
         </p>
       </div>
       <div class="mt-8 flex flex-wrap gap-4">
+        <a
+          href={page.hero.primaryCtaHref}
+          class="cta-primary"
+        >{page.hero.primaryCta}</a>
         <a
           href={page.hero.secondaryCtaHref}
           class="cta-secondary"
@@ -84,3 +134,48 @@ const headerCtaLabel = locale === 'de' ? 'Co-Creator Panel' : 'Co-Creator Panel'
     </div>
   </div>
 </section>
+
+<script is:inline>
+  (function () {
+    const widgets = document.querySelectorAll('[data-countdown]');
+    if (!widgets.length) return;
+
+    const pad = (value) => String(value).padStart(2, '0');
+
+    widgets.forEach((widget) => {
+      const target = new Date(widget.getAttribute('data-countdown-target')).getTime();
+      if (Number.isNaN(target)) return;
+
+      const daysEl = widget.querySelector('[data-countdown-days]');
+      const hoursEl = widget.querySelector('[data-countdown-hours]');
+      const minutesEl = widget.querySelector('[data-countdown-minutes]');
+      const secondsEl = widget.querySelector('[data-countdown-seconds]');
+      const grid = widget.querySelector('[data-countdown-grid]');
+      const liveText = widget.getAttribute('data-countdown-live') || '';
+
+      const update = () => {
+        const diff = target - Date.now();
+        if (diff <= 0) {
+          if (grid && liveText) {
+            grid.outerHTML = `<p class="font-display text-base font-bold text-[var(--color-primary)] md:text-lg">${liveText}</p>`;
+          }
+          return true;
+        }
+        const days = Math.floor(diff / 86400000);
+        const hours = Math.floor((diff % 86400000) / 3600000);
+        const minutes = Math.floor((diff % 3600000) / 60000);
+        const seconds = Math.floor((diff % 60000) / 1000);
+        if (daysEl) daysEl.textContent = pad(days);
+        if (hoursEl) hoursEl.textContent = pad(hours);
+        if (minutesEl) minutesEl.textContent = pad(minutes);
+        if (secondsEl) secondsEl.textContent = pad(seconds);
+        return false;
+      };
+
+      if (update()) return;
+      const interval = window.setInterval(() => {
+        if (update()) window.clearInterval(interval);
+      }, 1000);
+    });
+  })();
+</script>
