@@ -1,6 +1,6 @@
 export const siteUrl = 'https://prelaunch.benchtrust.com';
 export const companyName = 'BenchTrust GmbH';
-export const linkedInUrl = 'https://www.linkedin.com/in/bernd-burkhardt-028496173/';
+export const linkedInUrl = 'https://www.linkedin.com/company/prelaunch-benchtrust-gmbh/';
 
 export type Locale = 'en' | 'de';
 
