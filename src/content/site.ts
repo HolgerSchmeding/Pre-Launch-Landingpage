@@ -189,8 +189,8 @@ export const content = {
         'By signing up, you secure exclusive access to the beta version in July. We will only contact you for important launch updates and targeted feature surveys. <a href="/en/privacy/" class="underline hover:text-white">Privacy</a> | <a href="/en/terms/" class="underline hover:text-white">Terms</a>',
       successMessage: 'Welcome to the Co-Creator Panel! We will be in touch.',
       errorMessage: 'Submission failed. Please try again in a moment.',
-      configErrorMessage:
-        'HubSpot is not configured yet. Add portal ID and form ID in the environment file to activate submissions.'
+      pendingMessage:
+        'Almost done. Please check your inbox and confirm your email to activate your Co-Creator access.'
     },
     finalCta: {
       headline: 'See you on LinkedIn!',
@@ -388,8 +388,8 @@ export const content = {
         'Mit Ihrer Anmeldung sichern Sie sich exklusiven Zugang zur Beta-Version im Juli. Wir kontaktieren Sie für wichtige Launch-Updates und gezielte Umfragen zu neuen Features. <a href="/datenschutz/" class="underline hover:text-white">Datenschutz</a> | <a href="/agb/" class="underline hover:text-white">AGB</a>',
       successMessage: 'Willkommen im Co-Creator Panel! Wir melden uns bei Ihnen.',
       errorMessage: 'Die Übermittlung ist fehlgeschlagen. Bitte versuchen Sie es erneut.',
-      configErrorMessage:
-        'HubSpot ist noch nicht konfiguriert. Hinterlegen Sie Portal-ID und Formular-ID in der Umgebungsdatei.'
+      pendingMessage:
+        'Fast geschafft. Bitte prüfen Sie Ihr Postfach und bestätigen Sie Ihre E-Mail-Adresse, um den Co-Creator-Zugang zu aktivieren.'
     },
     finalCta: {
       headline: 'Wir sehen uns auf LinkedIn!',
