@@ -1,6 +1,6 @@
 export const siteUrl = 'https://prelaunch.benchtrust.com';
 export const companyName = 'BenchTrust GmbH';
-export const linkedInUrl = 'https://www.linkedin.com/company/prelaunch-benchtrust-gmbh/';
+export const linkedInUrl = 'https://www.linkedin.com/company/prelaunch-benchtrust-gmbh/posts/?feedView=all';
 
 export type Locale = 'en' | 'de';
 
