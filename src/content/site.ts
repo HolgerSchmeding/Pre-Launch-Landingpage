@@ -86,11 +86,12 @@ export const content = {
           label: 'For Buyers',
           title: 'Your Sourcing Copilot',
           text:
-            'Compare software and services in minutes instead of weeks. Data-driven, objective and 100% free for buyers.',
+            'Find, compare, decide — in hours instead of weeks. 100% free for buyers.',
           points: [
-            'Faster shortlist: automated maturity analyses and objective benchmarking.',
-            'Decide with confidence: solid ROI calculators and verified peer insights.',
-            'Source efficiently: send tailored RFPs in just a few clicks.'
+            'Market coverage from day one. Over 2,000 pre-qualified providers already on the platform — you don’t start from scratch, you start comparing.',
+            'Needs analysis before market search. With BenchTrust Analytics you capture your requirements in a structured, vendor-independent way — before the first provider enters the picture.',
+            'Match Score + BenchTrust Score. Two algorithmically calculated scores instead of subjective star reviews — shown directly on the provider profile.',
+            'Made in Germany. GDPR-native. German GmbH, EU data centres, privacy-by-design — legal certainty for your procurement.'
           ],
           ctaLabel: '▶ Provider Search Preview',
           ctaPreview: 'providerSearch'
@@ -101,11 +102,12 @@ export const content = {
           label: 'For Providers',
           title: 'Your Lead Engine',
           text:
-            'Be part of the decision, not just the shortlist. Turn anonymous traffic into qualified B2B leads.',
+            'Get visible before the shortlist is set. Turn research into qualified leads.',
           points: [
-            'Reclaim your influence: claim your verified profile and become visible immediately.',
-            'Qualified demand: receive direct RFP requests – without friction.',
-            'Win deals: turn hidden demand into measurable revenue.'
+            'Three tiers — from profile to sales channel. Freemium (€0) for visibility, Showcase for premium presentation, Lead Engine for active B2B sales.',
+            'Qualified RFP requests directly on your profile. Structured demand signals instead of anonymous traffic — you know who is looking for what, and why.',
+            'Visible in AI-driven research. When buyers use BenchTrust to find solutions, you appear right where decisions are actually made.',
+            'Software and services on one platform. Solution and service providers are both transparently visible and searchable.'
           ],
           ctaLabel: '▶ Provider Offering Preview',
           ctaPreview: 'providerOffering'
@@ -285,11 +287,12 @@ export const content = {
           label: 'Für Einkäufer',
           title: 'Ihr Sourcing Copilot',
           text:
-            'Vergleichen Sie Software und Services in Minuten statt Wochen. Datengetrieben, objektiv und für den Einkauf 100 % kostenfrei.',
+            'Finden, vergleichen, entscheiden — in Stunden statt Wochen. Für Einkäufer 100 % kostenfrei.',
           points: [
-            'Schneller zur Shortlist: Automatisierte Reifegradanalysen und objektives Benchmarking.',
-            'Souverän entscheiden: Fundierte ROI-Rechner und verifizierte Peer-Insights.',
-            'Effizient ausschreiben: Passgenaue RFPs mit wenigen Klicks versenden.'
+            'Marktabdeckung ab Tag 1. Über 2.000 vorqualifizierte Anbieter bereits auf der Plattform — Sie starten nicht bei Null, sondern direkt im Vergleich.',
+            'Bedarfsanalyse vor der Marktsuche. Mit BenchTrust Analytics erheben Sie Ihren Bedarf strukturiert und anbieterunabhängig — bevor der erste Anbieter ins Spiel kommt.',
+            'Match Score + BenchTrust Score. Zwei algorithmisch berechnete Scores statt subjektiver Sterne-Reviews — direkt am Anbieterprofil sichtbar.',
+            'Made in Germany. DSGVO-nativ. Deutsche GmbH, EU-Rechenzentren, Privacy-by-Design — Rechtssicherheit für Ihren Einkauf.'
           ],
           ctaLabel: '▶ Provider Search Preview',
           ctaPreview: 'providerSearch'
@@ -300,11 +303,12 @@ export const content = {
           label: 'Für Anbieter',
           title: 'Ihre Lead Engine',
           text:
-            'Seien Sie Teil der Entscheidung, nicht nur der Shortlist. Verwandeln Sie blinden Traffic in qualifizierte B2B-Leads.',
+            'Sichtbar werden, bevor die Shortlist steht. Aus Recherche wird qualifizierter Lead.',
           points: [
-            'Einfluss zurückgewinnen: Verifiziertes Profil claimen und sofort sichtbar werden.',
-            'Qualifizierte Nachfrage: Direkte RFP-Anfragen erhalten – ganz ohne Reibungsverluste.',
-            'Deals sichern: Verdeckte Nachfrage in messbaren Umsatz verwandeln.'
+            'Drei Stufen — vom Profil bis zum Vertriebskanal. Freemium (0 €) für Sichtbarkeit, Showcase für Premium-Darstellung, Lead Engine für aktiven B2B-Vertrieb.',
+            'Qualifizierte RFP-Anfragen direkt im Profil. Strukturierte Bedarfsmeldungen statt anonymem Traffic — Sie wissen, wer was sucht und warum.',
+            'Sichtbar in der KI-Recherche. Wenn Einkäufer mit BenchTrust nach Lösungen suchen, erscheinen Sie dort, wo die Entscheidung wirklich fällt.',
+            'Software und Service in einer Plattform. Lösungs- und Service-Anbieter sind beide transparent sichtbar und suchbar.'
           ],
           ctaLabel: '▶ Provider Offering Preview',
           ctaPreview: 'providerOffering'
